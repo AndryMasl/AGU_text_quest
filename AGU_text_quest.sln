@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGU_text_quest", "AGU_text_quest\AGU_text_quest.csproj", "{AADF15C7-7E3B-4B99-951E-EB67AD9ADBB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AADF15C7-7E3B-4B99-951E-EB67AD9ADBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AADF15C7-7E3B-4B99-951E-EB67AD9ADBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AADF15C7-7E3B-4B99-951E-EB67AD9ADBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AADF15C7-7E3B-4B99-951E-EB67AD9ADBB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C2CE58D-928B-4E2C-9B87-2B9B8CAEB355}
+	EndGlobalSection
+EndGlobal
