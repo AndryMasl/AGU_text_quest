@@ -38,7 +38,11 @@ namespace MainLogic
 					var action = point.Actions.FirstOrDefault(x => x.Number == actionNumber);
 
 					if (action is null)
+					{
+						Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
 						continue;
+					}
+						
 
 					IsAnswerGot = action.IsAvailable;
 					action.SetVisibleAfterAction(player);
