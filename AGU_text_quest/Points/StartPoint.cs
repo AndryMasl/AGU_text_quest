@@ -24,10 +24,8 @@ namespace Points
 		}
 	}
 
-	public class FirstActionForStartPoint : ActionBase
+	public class FirstActionForStartPoint : FirstAction
 	{
-		private const int ACTION_NUMBER = 1;
-		public override int Number => ACTION_NUMBER;
 		public override string ActionDescription => "Еще немного поспать";
 
 		public FirstActionForStartPoint()
@@ -37,10 +35,8 @@ namespace Points
 		}
 	}
 
-	public class SecondActionForStartPoint : ActionBase
+	public class SecondActionForStartPoint : SecondAction
 	{
-		private const int ACTION_NUMBER = 2;
-		public override int Number => ACTION_NUMBER;
 		public override string ActionDescription => "Позвать Лизу";
 
 		public SecondActionForStartPoint()
@@ -50,10 +46,8 @@ namespace Points
 		}
 	}
 
-	public class ThirdActionForStartPoint : ActionBase
+	public class ThirdActionForStartPoint : ThirdAction
 	{
-		private const int ACTION_NUMBER = 3;
-		public override int Number => ACTION_NUMBER;
 		public override string ActionDescription => "Пойти на кухню";
 
 		public ThirdActionForStartPoint()

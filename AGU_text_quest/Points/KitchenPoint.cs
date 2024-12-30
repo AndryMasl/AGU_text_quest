@@ -29,10 +29,8 @@ namespace Points
 
 	}
 
-	public class FirstActionForKitchenPoint : ActionBase
+	public class FirstActionForKitchenPoint : FirstAction
 	{
-		private const int ACTION_NUMBER = 1;
-		public override int Number => ACTION_NUMBER;
 		public override string ActionDescription => "Посмотреть в окно";
 
 		public FirstActionForKitchenPoint()
@@ -42,10 +40,8 @@ namespace Points
 		}
 	}
 
-	public class SecondActionForKitchenPoint : ActionBase
+	public class SecondActionForKitchenPoint : SecondAction
 	{
-		private const int ACTION_NUMBER = 2;
-		public override int Number => ACTION_NUMBER;
 		public override string ActionDescription => "Надо подкрепится";
 
 		public SecondActionForKitchenPoint()
