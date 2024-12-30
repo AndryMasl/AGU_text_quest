@@ -16,8 +16,8 @@ namespace MainLogic
 
         protected Player _player { get; }
 		public abstract string Content { get; }
-		public List<ActionBase> Actions { get; set; }
-		public Action DoAfterPoint { get; set; }
+		public List<ActionBase>? Actions { get; set; }
+		public Action? DoAfterPoint { get; set; }
 
 		public void SetActions()
 		{
