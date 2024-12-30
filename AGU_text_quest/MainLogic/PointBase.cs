@@ -9,12 +9,16 @@ namespace MainLogic
 {
 	public abstract class PointBase
 	{
-        public PointBase()
-        {
-			_player = Player.Instance;
+		protected Player? _player;
+		public Player Player
+		{
+			get
+			{
+				if (_player is null) _player = Player.Instance;
+				return _player;
+			}
+			set { _player = value; }
 		}
-
-        protected Player _player { get; }
 		public abstract string Content { get; }
 		public List<ActionBase>? Actions { get; set; }
 		public Action? DoAfterPoint { get; set; }

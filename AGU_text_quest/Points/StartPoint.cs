@@ -10,10 +10,10 @@ namespace Points
 {
 	public class StartPoint : PointBase
 	{
-		public override string Content => $"{_player.Name} проснулся посреди ночи и приподнялся на постели. Оглянувшись он понял, что в квартире больше никого нет.";
+		public override string Content => $"{Player.Name} проснулся посреди ночи и приподнялся на постели. Оглянувшись он понял, что в квартире больше никого нет.";
 
 
-		public StartPoint() : base()
+		public StartPoint()
 		{
 			Actions = new()
 			{

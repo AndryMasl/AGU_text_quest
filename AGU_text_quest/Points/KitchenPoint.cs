@@ -9,9 +9,9 @@ namespace Points
 {
 	public class KitchenPoint : PointBase
 	{
-		public override string Content => $"{_player.Name} заходит на кухню. Все выглядит точно так же как и в последний раз, когда он здесь был.";
+		public override string Content => $"{Player.Name} заходит на кухню. Все выглядит точно так же как и в последний раз, когда он здесь был.";
 
-        public KitchenPoint() : base()
+        public KitchenPoint()
         {
 			DoAfterPoint = KitchenPointAction;
 			Actions = new()
@@ -23,8 +23,8 @@ namespace Points
 
 		protected void KitchenPointAction()
 		{
-			_player.endGame = true;
-			Console.WriteLine($"В холодильнике осталась только недопитая газировка. Но {_player.Name} Точно помнит, что холодильник был забит до отказа!! Здесь явно был Dre и все съел!! {_player.Name} кричит: Нееет! И дает слово мстить Dre до конца своих дней. \nКОНЕЦ!!!");
+			Player.endGame = true;
+			Console.WriteLine($"В холодильнике осталась только недопитая газировка. Но {Player.Name} Точно помнит, что холодильник был забит до отказа!! Здесь явно был Dre и все съел!! {Player.Name} кричит: Нееет! И дает слово мстить Dre до конца своих дней. \nКОНЕЦ!!!");
 		}
 
 	}
