@@ -25,41 +25,48 @@ namespace MainLogic
 
 		private void GetAnswer(PointBase point, Player player)
 		{
-			bool IsAnswerGot = false;
+			bool isAnswerGot = false;
 
-			while (!IsAnswerGot)
+			while (!isAnswerGot)
 			{
-				IsAnswerGot = CheckPoint(point, player);
+				isAnswerGot = CheckPoint(point, player);
 
 				var str = Console.ReadLine();
 
-				if (int.TryParse(str, out var actionNumber))
-				{
-					var action = point.Actions.FirstOrDefault(x => x.Number == actionNumber);
+				var noShowMessage = DoAction(str, point, player, ref isAnswerGot);
 
-					if (action is null)
-					{
-						Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
-						continue;
-					}
-						
+				//if (noShowMessage)
+				//	noShowMessage = DoConsoleCommand();
 
-					IsAnswerGot = action.IsAvailable;
-					action.SetVisibleAfterAction(player);
-
-					if (!IsAnswerGot)
-					{
-						Console.WriteLine(action.MassageAfterAction);
-						point.ShowActions();
-					}
-					else
-						player.pointID = action.NextPointID;
-					
-					continue;
-				}
-				
-				Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
+				if (!noShowMessage)
+					Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
 			}
+		}
+
+		private bool DoAction(string? str, PointBase point, Player player, ref bool isAnswerGot)
+		{
+			if (int.TryParse(str, out var actionNumber))
+			{
+				var action = point.Actions.FirstOrDefault(x => x.Number == actionNumber);
+
+				if (action is null)
+					return false;
+
+				isAnswerGot = action.IsAvailable;
+				action.SetVisibleAfterAction(player);
+
+				if (!isAnswerGot)
+				{
+					Console.WriteLine(action.MassageAfterAction);
+					point.ShowActions();
+				}
+				else
+					player.pointID = action.NextPointID;
+
+				return true;
+			}
+
+			return false;
 		}
 
 		private bool CheckPoint(PointBase point, Player player)
