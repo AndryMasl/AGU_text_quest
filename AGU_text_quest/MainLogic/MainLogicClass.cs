@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using static MainLogic.ModuleDim;
 
 namespace MainLogic
@@ -35,11 +35,43 @@ namespace MainLogic
 
 				var noShowMessage = DoAction(str, point, player, ref isAnswerGot);
 
-				//if (noShowMessage)
-				//	noShowMessage = DoConsoleCommand();
+				if (!noShowMessage)
+					noShowMessage = DoConsoleCommand(str, point, player, ref isAnswerGot);
 
 				if (!noShowMessage)
 					Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
+			}
+		}
+
+		private bool DoConsoleCommand(string? str, PointBase point, Player player, ref bool isAnswerGot)
+		{
+			if (str is null)
+				return false;
+
+			Regex regex = new Regex(@"\w+\s\d+");
+
+			if (regex.IsMatch(str))
+			{
+				var strs = str.Split(' ');
+
+				if (!int.TryParse(strs[1], out var number))
+					return false;
+
+				if (!ConsoleCommandDic.TryGetValue(strs[0], out var consoleCommand))
+					return false;
+
+				consoleCommand.Invoke(point, player, number);
+				isAnswerGot = true;
+				return true;
+			}
+			else
+			{
+				if (!ConsoleCommandDic.TryGetValue(str, out var consoleCommand))
+					return false;
+
+				consoleCommand.Invoke(point, player, 0);
+				isAnswerGot = true;
+				return true;
 			}
 		}
 
