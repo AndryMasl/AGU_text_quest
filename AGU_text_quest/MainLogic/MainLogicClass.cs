@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using static MainLogic.ModuleDim;
 
 namespace MainLogic
@@ -25,41 +25,80 @@ namespace MainLogic
 
 		private void GetAnswer(PointBase point, Player player)
 		{
-			bool IsAnswerGot = false;
+			bool isAnswerGot = false;
 
-			while (!IsAnswerGot)
+			while (!isAnswerGot)
 			{
-				IsAnswerGot = CheckPoint(point, player);
+				isAnswerGot = CheckPoint(point, player);
 
 				var str = Console.ReadLine();
 
-				if (int.TryParse(str, out var actionNumber))
-				{
-					var action = point.Actions.FirstOrDefault(x => x.Number == actionNumber);
+				var noShowMessage = DoAction(str, point, player, ref isAnswerGot);
 
-					if (action is null)
-					{
-						Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
-						continue;
-					}
-						
+				if (!noShowMessage)
+					noShowMessage = DoConsoleCommand(str, point, player, ref isAnswerGot);
 
-					IsAnswerGot = action.IsAvailable;
-					action.SetVisibleAfterAction(player);
-
-					if (!IsAnswerGot)
-					{
-						Console.WriteLine(action.MassageAfterAction);
-						point.ShowActions();
-					}
-					else
-						player.pointID = action.NextPointID;
-					
-					continue;
-				}
-				
-				Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
+				if (!noShowMessage)
+					Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
 			}
+		}
+
+		private bool DoConsoleCommand(string? str, PointBase point, Player player, ref bool isAnswerGot)
+		{
+			if (str is null)
+				return false;
+
+			Regex regex = new Regex(@"\w+\s\d+");
+
+			if (regex.IsMatch(str))
+			{
+				var strs = str.Split(' ');
+
+				if (!int.TryParse(strs[1], out var number))
+					return false;
+
+				if (!ConsoleCommandDic.TryGetValue(strs[0], out var consoleCommand))
+					return false;
+
+				consoleCommand.Invoke(point, player, number);
+				isAnswerGot = true;
+				return true;
+			}
+			else
+			{
+				if (!ConsoleCommandDic.TryGetValue(str, out var consoleCommand))
+					return false;
+
+				consoleCommand.Invoke(point, player, 0);
+				isAnswerGot = true;
+				return true;
+			}
+		}
+
+		private bool DoAction(string? str, PointBase point, Player player, ref bool isAnswerGot)
+		{
+			if (int.TryParse(str, out var actionNumber))
+			{
+				var action = point.Actions.FirstOrDefault(x => x.Number == actionNumber);
+
+				if (action is null)
+					return false;
+
+				isAnswerGot = action.IsAvailable;
+				action.SetVisibleAfterAction(player);
+
+				if (!isAnswerGot)
+				{
+					Console.WriteLine(action.MassageAfterAction);
+					point.ShowActions();
+				}
+				else
+					player.pointID = action.NextPointID;
+
+				return true;
+			}
+
+			return false;
 		}
 
 		private bool CheckPoint(PointBase point, Player player)

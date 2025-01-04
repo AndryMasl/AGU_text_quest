@@ -31,7 +31,7 @@ namespace MainLogic
 
 		public void ShowActions()
 		{
-			foreach (var action in Actions.Where(x => x.IsVisible == true))
+			foreach (var action in Actions?.Where(x => x.IsVisible))
 				Console.WriteLine(action.Number + ". " + action.ActionDescription);
 		}
 	}

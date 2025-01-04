@@ -9,6 +9,11 @@ namespace MainLogic
 {
 	public static class ModuleDim
 	{
+		public static Dictionary<string, Action<PointBase, Player, int>> ConsoleCommandDic = new Dictionary<string, Action<PointBase, Player, int>>
+		{
+			{ "end", ConsoleCommand.End },
+		};
+
 		public static Dictionary<int, PointBase> PointDictionary = new Dictionary<int, PointBase>() 
 		{
 			{ 0, new StartPoint() },
