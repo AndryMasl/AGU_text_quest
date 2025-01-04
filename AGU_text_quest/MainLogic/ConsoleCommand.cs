@@ -10,7 +10,7 @@ namespace MainLogic
 	{
 		public static void End(PointBase point, Player player, int idPoint)
 		{
-			player.endGame = true;
+			Environment.Exit(0);
 		}
 	}
 }
