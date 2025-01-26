@@ -32,5 +32,11 @@ namespace MainLogic
 			pointID = 0;
 			endGame = false;
 		}
+
+		#region FlagsForDecision
+
+
+
+		#endregion
 	}
 }
