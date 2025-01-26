@@ -12,6 +12,9 @@ namespace MainLogic
 		public static Dictionary<string, Action<PointBase, Player, int>> ConsoleCommandDic = new Dictionary<string, Action<PointBase, Player, int>>
 		{
 			{ "end", ConsoleCommand.End },
+			{ "goto", ConsoleCommand.GoTo },
+			{ "save", ConsoleCommand.Save },
+			{ "status", ConsoleCommand.ShowStatus },
 		};
 
 		public static Dictionary<int, PointBase> PointDictionary = new Dictionary<int, PointBase>() 
