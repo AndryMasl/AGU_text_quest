@@ -47,7 +47,6 @@ namespace Points
 		public SecondActionForKitchenPoint()
 		{
 			IsAvailable = true;
-			MassageAfterAction = $"За окном ночь, мало что можно разобрать во тьме";
 		}
 	}
 }
