@@ -21,7 +21,7 @@ namespace MainLogic
 		}
 		public abstract string Content { get; }
 		public List<ActionBase>? Actions { get; set; }
-		public Action? DoAfterPoint { get; set; }
+		public Action? DoAfterPoint { get; set; } // Q_MAV: нужен ли этот метод?
 
 		public void SetActions()
 		{

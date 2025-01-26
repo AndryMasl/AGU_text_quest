@@ -12,5 +12,21 @@ namespace MainLogic
 		{
 			Environment.Exit(0);
 		}
+
+
+		public static void GoTo(PointBase point, Player player, int idPoint)
+		{
+			throw new NotImplementedException();
+		}
+
+		public static void Save(PointBase point, Player player, int idPoint)
+		{
+			throw new NotImplementedException();
+		}
+
+		public static void ShowStatus(PointBase point, Player player, int idPoint)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
