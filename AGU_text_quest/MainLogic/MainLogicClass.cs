@@ -19,7 +19,7 @@ namespace MainLogic
 				ShowContent(point);
 
 				GetAnswer(point, player);
-				point.DoAfterPoint?.Invoke();
+				point.DoAfterPoint?.Invoke(); // TODO_MAV: Этот метод лучше перенести в Action. Чтобы Point не был тупиковым.
 			}
 		}
 
@@ -94,6 +94,8 @@ namespace MainLogic
 				}
 				else
 					player.pointID = action.NextPointID;
+
+				// action.DoAfterAction.Invoke(player);
 
 				return true;
 			}

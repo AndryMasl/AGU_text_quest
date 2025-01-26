@@ -21,7 +21,7 @@ namespace Points
 			};
 		}
 
-		protected void KitchenPointAction()
+		protected void KitchenPointAction() // TODO_MAV: это не должно быть здесь. Тупиковый Point получается.
 		{
 			Player.endGame = true;
 			Console.WriteLine($"В холодильнике осталась только недопитая газировка. Но {Player.Name} Точно помнит, что холодильник был забит до отказа!! Здесь явно был Dre и все съел!! {Player.Name} кричит: Нееет! И дает слово мстить Dre до конца своих дней. \nКОНЕЦ!!!");
