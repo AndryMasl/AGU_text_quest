@@ -19,7 +19,7 @@ namespace MainLogic
 				ShowContent(point);
 
 				GetAnswer(point, player);
-				point.DoAfterPoint?.Invoke(); // TODO_MAV: Этот метод лучше перенести в Action. Чтобы Point не был тупиковым.
+				// point.DoAfterPoint?.Invoke(); // В этом действии нет смысла
 			}
 		}
 
@@ -29,85 +29,135 @@ namespace MainLogic
 
 			while (!isAnswerGot)
 			{
-				isAnswerGot = CheckPoint(point, player);
+				if (CheckPoint(point, player))
+					return;
 
 				var str = Console.ReadLine();
 
-				var noShowMessage = DoAction(str, point, player, ref isAnswerGot);
+				var commandType = GetCommandType(str);
 
-				if (!noShowMessage)
-					noShowMessage = DoConsoleCommand(str, point, player, ref isAnswerGot);
+				var DoNotShowWarning = true;
 
-				if (!noShowMessage)
+				switch (commandType)
+				{
+					case CommandType.Action:
+						{
+							DoNotShowWarning = DoAction(str, point, player, ref isAnswerGot);
+							break;
+						}
+					case CommandType.ConsoleCommandWithoutValue:
+						{
+							DoNotShowWarning = DoConsoleCommand(str, point, player, ref isAnswerGot);
+							break;
+						}
+					case CommandType.ConsoleCommandWithValue:
+						{
+							DoNotShowWarning = DoConsoleCommandWithValue(str, point, player, ref isAnswerGot);
+							break;
+						}
+					default:
+						{
+							DoNotShowWarning = false;
+							break;
+						}
+				}
+
+				if (!DoNotShowWarning)
 					Console.WriteLine($"Действие невозможно, попробуйте еще раз.");
 			}
 		}
 
-		private bool DoConsoleCommand(string? str, PointBase point, Player player, ref bool isAnswerGot)
+		private CommandType GetCommandType(string? str)
+		{
+			if (str is null)
+				return CommandType.None;
+
+			if (int.TryParse(str, out var actionNumber))
+				return CommandType.Action;
+
+			Regex regex = new Regex(@"\w+\s\d+");
+			if (regex.IsMatch(str))
+				return CommandType.ConsoleCommandWithValue;
+
+			regex = new Regex(@"\w+");
+			if (regex.IsMatch(str))
+				return CommandType.ConsoleCommandWithoutValue;
+
+			return CommandType.None;
+		}
+
+		enum CommandType
+		{
+			None = 0,
+			Action = 1,
+			ConsoleCommandWithoutValue = 2,
+			ConsoleCommandWithValue = 3,
+		}
+
+		private bool DoConsoleCommandWithValue(string? str, PointBase point, Player player, ref bool isAnswerGot)
 		{
 			if (str is null)
 				return false;
 
 			Regex regex = new Regex(@"\w+\s\d+");
 
-			if (regex.IsMatch(str))
-			{
-				var strs = str.Split(' ');
+			if (!regex.IsMatch(str))
+				return false;
+			
+			var strs = str.Split(' ');
 
-				if (!int.TryParse(strs[1], out var number))
-					return false;
+			if (!int.TryParse(strs[1], out var number))
+				return false;
 
-				if (!ConsoleCommandDic.TryGetValue(strs[0], out var consoleCommand))
-					return false;
+			return DoConsoleCommand(strs[0], point, player, ref isAnswerGot, number);
+		}
 
-				consoleCommand.Invoke(point, player, number);
-				isAnswerGot = true;
-				return true;
-			}
-			else
-			{
-				if (!ConsoleCommandDic.TryGetValue(str, out var consoleCommand))
-					return false;
+		private bool DoConsoleCommand(string? str, PointBase point, Player player, ref bool isAnswerGot, int value = 0)
+		{
+			if (str is null)
+				return false;
 
-				consoleCommand.Invoke(point, player, 0);
-				isAnswerGot = true;
-				return true;
-			}
+			if (!ConsoleCommandDic.TryGetValue(str, out var consoleCommand))
+				return false;
+
+			consoleCommand.Invoke(point, player, value);
+			isAnswerGot = true;
+			return true;
 		}
 
 		private bool DoAction(string? str, PointBase point, Player player, ref bool isAnswerGot)
 		{
-			if (int.TryParse(str, out var actionNumber))
+			if (!int.TryParse(str, out var actionNumber))
+				return false;
+			
+			var action = point?.Actions?
+				.FirstOrDefault(x => x.Number == actionNumber && x.IsVisible == true);
+
+			if (action is null)
+				return false;
+
+			isAnswerGot = action.IsAvailable;
+			action.SetVisibleAfterAction(player);
+
+			if (!isAnswerGot)
 			{
-				var action = point.Actions.FirstOrDefault(x => x.Number == actionNumber);
-
-				if (action is null)
-					return false;
-
-				isAnswerGot = action.IsAvailable;
-				action.SetVisibleAfterAction(player);
-
-				if (!isAnswerGot)
-				{
-					Console.WriteLine(action.MassageAfterAction);
-					point.ShowActions();
-				}
-				else
-					player.pointID = action.NextPointID;
-
-				// action.DoAfterAction.Invoke(player);
-
-				return true;
+				Console.WriteLine(action.MassageAfterAction);
+				point?.ShowActions();
 			}
+			else
+				player.pointID = action.NextPointID;
 
-			return false;
+			action?.DoAfterAction?.Invoke(player);
+
+			return true;
 		}
 
 		private bool CheckPoint(PointBase point, Player player)
 		{
-			if (point.Actions.Where(x => x.IsVisible == true).Count() == 0)
+			if (point?.Actions?.Where(x => x.IsVisible == true).Count() == 0)
 			{
 				player.endGame = true;
+				Console.WriteLine("Нет доступных действий.\nАварийное завершение.");
 				return true;
 			}
 
