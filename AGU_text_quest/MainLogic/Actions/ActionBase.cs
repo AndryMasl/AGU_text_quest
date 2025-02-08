@@ -25,6 +25,6 @@ namespace MainLogic
 			IsVisible = false; 
 		}
 
-		// public Action<Player> DoAfterAction = null;
+		public Action<Player>? DoAfterAction { get; set; }
 	}
 }
