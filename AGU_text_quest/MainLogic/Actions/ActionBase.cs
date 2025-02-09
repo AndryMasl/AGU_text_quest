@@ -15,12 +15,12 @@ namespace MainLogic
 		public string? MassageAfterAction { get; set; }
 		public int NextPointID { get; set; }
 
-		public void SetVisibleBeforeAction(Player player)
+		public virtual void SetVisibleBeforeAction(Player player)
 		{
 			IsVisible = true;
 		}
 
-		public void SetVisibleAfterAction (Player player) 
+		public virtual void SetVisibleAfterAction (Player player, PointBase point) 
 		{ 
 			IsVisible = false; 
 		}

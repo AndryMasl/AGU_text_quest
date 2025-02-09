@@ -137,7 +137,7 @@ namespace MainLogic
 				return false;
 
 			isAnswerGot = action.IsAvailable;
-			action.SetVisibleAfterAction(player);
+			action.SetVisibleAfterAction(player, point);
 
 			if (!isAnswerGot)
 			{
