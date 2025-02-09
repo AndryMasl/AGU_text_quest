@@ -17,6 +17,7 @@ namespace Points
 			{
 				new FirstActionForKitchenPoint(),
 				new SecondActionForKitchenPoint(),
+				new ThirdActionForKitchenPoint(),
 			};
 		}
 	}
@@ -46,6 +47,23 @@ namespace Points
 		{
 			player.endGame = true;
 			Console.WriteLine($"В холодильнике осталась только недопитая газировка. Но {player.Name} Точно помнит, что холодильник был забит до отказа!! Здесь явно был Dre и все съел!! {player.Name} кричит: Нееет! И дает слово мстить Dre до конца своих дней. \nКОНЕЦ!!!");
+		}
+	}
+
+	public class ThirdActionForKitchenPoint : ThirdAction
+	{
+		public override string ActionDescription => "Это сон, надо проснуться";
+
+        public ThirdActionForKitchenPoint()
+        {
+			IsAvailable = true;
+			NextPointID = 2;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			Console.WriteLine($"{player.Name} замечает, что вокруг все какое-то не настоящее. Как во сне. Усилием воли {player.Name} просыпается.");
 		}
 	}
 }
