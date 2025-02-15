@@ -35,7 +35,16 @@ namespace MainLogic
 
 		#region FlagsForDecision
 
+		#region Local
+		
+		public bool PullUpHorizontalBarPoint = false;
+		public int CounterPullUpHorizontalBarPoint = 0;
 
+
+		#endregion
+
+		#region Global
+		#endregion
 
 		#endregion
 	}
