@@ -16,14 +16,14 @@ namespace Points
             Actions = new()
             {
 				new FirstActionForHouseWithSonPoint(),
-				// new SecondActionForHouseWithSonPoint(),
+				new SecondActionForHouseWithSonPoint(),
 				new ThirdActionForHouseWithSonPoint(),
 				new FourthActionForHouseWithSonPoint(),
+				new FifthActionForHouseWithSonPoint(),
+				new SixthActionForHouseWithSonPoint(),
 			};
         }
     }
-
-	
 
 	internal class FirstActionForHouseWithSonPoint : FirstAction
 	{
@@ -32,13 +32,36 @@ namespace Points
 		public FirstActionForHouseWithSonPoint()
 		{
 			IsAvailable = false;
-			MassageAfterAction = $"По телевизору идет прямая трансляция соревнований по тяжелой атлетике. Эди Холл выполняет становую с весом 502 кг. В процессе выполнения у него из носа льются струи крови.";
+			MassageAfterAction = $"По телевизору идет прямая трансляция соревнований по тяжелой атлетике. Эдди Холл выполняет становую с весом 502 кг. В процессе выполнения у него из носа льются струи крови.";
 		}
 
 		public override void SetVisibleAfterAction(Player player, PointBase point)
 		{
 			base.SetVisibleAfterAction(player, point);
-			var actions = point?.Actions?.Where(x => x.Number == 3 || x.Number == 4);
+			var actions = point?.Actions?.Where(x => x.Number == ThirdAction.ACTION_NUMBER || x.Number == FourthAction.ACTION_NUMBER);
+
+			if (actions is null)
+				return;
+
+			foreach (var action in actions)
+				action.IsVisible = true;
+		}
+	}
+
+	internal class SecondActionForHouseWithSonPoint : SecondAction
+	{
+		public override string ActionDescription => "Спросить про домашку";
+
+		public SecondActionForHouseWithSonPoint()
+		{
+			IsAvailable = false;
+			MassageAfterAction = $"{Player.Instance.Name}: \"Вот ты смотришь телик, а домашку ты сделал?\" \nМем: \"Па, я потом сделаю, можно?\"";
+		}
+
+		public override void SetVisibleAfterAction(Player player, PointBase point)
+		{
+			base.SetVisibleAfterAction(player, point);
+			var actions = point?.Actions?.Where(x => x.Number == FifthAction.ACTION_NUMBER || x.Number == SixthAction.ACTION_NUMBER);
 
 			if (actions is null)
 				return;
@@ -66,7 +89,7 @@ namespace Points
 		public override void SetVisibleAfterAction(Player player, PointBase point)
 		{
 			base.SetVisibleAfterAction(player, point);
-			var action = point?.Actions?.FirstOrDefault(x => x.Number == 4);
+			var action = point?.Actions?.FirstOrDefault(x => x.Number == FourthAction.ACTION_NUMBER);
 
 			if (action is null) return;
 
@@ -81,22 +104,57 @@ namespace Points
 		public FourthActionForHouseWithSonPoint()
 		{
 			IsAvailable = false;
-			MassageAfterAction = $"{Player.Instance.Name} с улыбкой на лице смотрит на триумф Эди. Эди с грохотом опускает штангу и падает на колени. К нему сбегаются медики, тренера. Один их медиков машет рукой, Эди жив. {Player.Instance.Name} представляет, что и его сын однажды станет гиго качком.";
+			MassageAfterAction = $"{Player.Instance.Name} с улыбкой на лице смотрит на триумф Эдди. Эдди с грохотом опускает штангу и падает на колени. К нему сбегаются медики, тренера. Один из медиков машет рукой, Эди жив. {Player.Instance.Name} представляет, что и его сын однажды станет гиго качком.";
 		}
 
-		public override void SetVisibleBeforeAction(Player player)
-		{
-			base.IsVisible = false;
-		}
+		public override void SetVisibleBeforeAction(Player player) => IsVisible = false;
 
 		public override void SetVisibleAfterAction(Player player, PointBase point)
 		{
 			base.SetVisibleAfterAction(player, point);
-			var action = point?.Actions?.FirstOrDefault(x => x.Number == 3);
+			var action = point?.Actions?.FirstOrDefault(x => x.Number == ThirdAction.ACTION_NUMBER);
 
 			if (action is null) return;
 
 			action.IsVisible = false;
 		}
+	}
+
+	internal class FifthActionForHouseWithSonPoint : FifthAction
+	{
+		public override string ActionDescription => "В пень домашку, можешь не делать.";
+
+		public FifthActionForHouseWithSonPoint()
+		{
+			IsAvailable = true;
+			NextPointID = 3;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			Console.WriteLine($"{Player.Instance.Name}: \"Посмотри на меня, я мего успешный миллионер. И знаешь что? Я никогда не делал домашку!! Просто забей и живи полной жизнью.\"\nМем: \"Па, ты лучший!! Ты же помнишь, что мы собирались погулять вместе в эту Сб?\"\n{Player.Instance.Name}: \"Конечно помню!!\"");
+		}
+
+		public override void SetVisibleBeforeAction(Player player) => IsVisible = false;
+	}
+
+	internal class SixthActionForHouseWithSonPoint : SixthAction
+	{
+		public override string ActionDescription => "Иди делай домашку!!";
+
+		public SixthActionForHouseWithSonPoint()
+		{
+			IsAvailable = true;
+			NextPointID = 3;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			Console.WriteLine($"{Player.Instance.Name}: \"И когда наступит это твое потом? Опять ночью спать не будешь? А потом вырубишься прям на уроке? Нет так не пойдет, марш делать домашку!!\"Мем: \"Ладно, ладно, я уже иду. Но ты же помнишь, что обещал погулять со мной в эту Сб?\"\n{Player.Instance.Name}: \"Конечно помню!!\"");
+		}
+
+		public override void SetVisibleBeforeAction(Player player) => IsVisible = false;
 	}
 }
