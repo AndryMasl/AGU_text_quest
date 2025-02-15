@@ -16,7 +16,7 @@ namespace MainLogic
 
 		public static void GoTo(PointBase point, Player player, int idPoint)
 		{
-			throw new NotImplementedException();
+			player.pointID = idPoint;
 		}
 
 		public static void Save(PointBase point, Player player, int idPoint)
