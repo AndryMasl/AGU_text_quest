@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MainLogic
 {
-	public abstract class FifthAction : ActionBase
+	public abstract class SixthAction : ActionBase
 	{
-		public const int ACTION_NUMBER = 5;
+		public const int ACTION_NUMBER = 6;
 		public override int Number => ACTION_NUMBER;
 	}
 }

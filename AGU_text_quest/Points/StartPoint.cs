@@ -20,7 +20,25 @@ namespace Points
 				new FirstActionForStartPoint(),
 				new SecondActionForStartPoint(),
 				new ThirdActionForStartPoint(),
+				new FourthActionForStartPoint(),
 			};
+		}
+	}
+
+	internal class FourthActionForStartPoint : FourthAction
+	{
+		public override string ActionDescription => "Это сон, надо проснуться";
+
+		public FourthActionForStartPoint()
+		{
+			IsAvailable = true;
+			NextPointID = 2;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			Console.WriteLine($"{player.Name} замечает, что вокруг все какое-то не настоящее. Как во сне. Усилием воли {player.Name} просыпается.");
 		}
 	}
 

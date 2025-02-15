@@ -8,7 +8,7 @@ namespace MainLogic
 {
 	public abstract class SecondAction : ActionBase
 	{
-		private const int ACTION_NUMBER = 2;
+		public const int ACTION_NUMBER = 2;
 		public override int Number => ACTION_NUMBER;
 	}
 }

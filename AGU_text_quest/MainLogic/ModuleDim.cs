@@ -21,6 +21,10 @@ namespace MainLogic
 		{
 			{ 0, new StartPoint() },
 			{ 1, new KitchenPoint() },
+			{ 2, new HouseWithSonPoint() },
+			{ 3, new WalkWithSonPoint() },
+			{ 4, new HorizontalBarPoint() },
+			{ 5, new RunChasePoint() },
 		};
 	}
 }

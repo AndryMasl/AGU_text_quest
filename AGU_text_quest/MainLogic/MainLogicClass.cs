@@ -19,7 +19,7 @@ namespace MainLogic
 				ShowContent(point);
 
 				GetAnswer(point, player);
-				// point.DoAfterPoint?.Invoke(); // В этом действии нет смысла
+				point.DoAfterAction?.Invoke();
 			}
 		}
 
@@ -137,17 +137,19 @@ namespace MainLogic
 				return false;
 
 			isAnswerGot = action.IsAvailable;
-			action.SetVisibleAfterAction(player);
+			action.SetVisibleAfterAction(player, point);
 
 			if (!isAnswerGot)
 			{
 				Console.WriteLine(action.MassageAfterAction);
+				action?.DoAfterAction?.Invoke(player);
 				point?.ShowActions();
 			}
 			else
+			{
 				player.pointID = action.NextPointID;
-
-			action?.DoAfterAction?.Invoke(player);
+				action?.DoAfterAction?.Invoke(player);
+			}
 
 			return true;
 		}
@@ -168,6 +170,7 @@ namespace MainLogic
 		{
 			Console.WriteLine(point.Content + "\n");
 
+			point.DoBeforeAction?.Invoke();
 			point.SetActions();
 			point.ShowActions();
 		}
