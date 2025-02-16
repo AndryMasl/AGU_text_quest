@@ -25,6 +25,7 @@ namespace MainLogic
 			{ 3, new WalkWithSonPoint() },
 			{ 4, new HorizontalBarPoint() },
 			{ 5, new RunChasePoint() },
+			{ 6, new FlyChasePoint() },
 		};
 	}
 }

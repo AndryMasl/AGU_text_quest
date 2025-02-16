@@ -27,7 +27,7 @@ namespace MainLogic
 		public void SetActions()
 		{
 			foreach (var action in Actions)
-				action.SetVisibleBeforeAction(_player);
+				action.SetVisibleBeforeAction(Player.Instance);
 		}
 
 		public void ShowActions()
