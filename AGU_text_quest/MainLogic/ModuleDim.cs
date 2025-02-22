@@ -26,6 +26,8 @@ namespace MainLogic
 			{ 4, new HorizontalBarPoint() },
 			{ 5, new RunChasePoint() },
 			{ 6, new FlyChasePoint() },
+			{ 7, new CarChasePoint() },
+			{ 8, new HousePoint() },
 		};
 	}
 }
