@@ -44,6 +44,9 @@ namespace MainLogic
 		#endregion
 
 		#region Global
+
+		public bool SilverGreg = false;
+
 		#endregion
 
 		#endregion
