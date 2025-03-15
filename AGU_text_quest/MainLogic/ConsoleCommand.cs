@@ -28,5 +28,13 @@ namespace MainLogic
 		{
 			throw new NotImplementedException();
 		}
+
+		internal static void SetSilverGreg(PointBase point, Player player, int value)
+		{
+			if (value > 0)
+				player.SilverGreg = true;
+			else 
+				player.SilverGreg = false;
+		}
 	}
 }

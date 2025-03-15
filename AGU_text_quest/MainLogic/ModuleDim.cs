@@ -15,6 +15,7 @@ namespace MainLogic
 			{ "goto", ConsoleCommand.GoTo },
 			{ "save", ConsoleCommand.Save },
 			{ "status", ConsoleCommand.ShowStatus },
+			{ "setsg", ConsoleCommand.SetSilverGreg },
 		};
 
 		public static Dictionary<int, PointBase> PointDictionary = new Dictionary<int, PointBase>() 
@@ -28,6 +29,8 @@ namespace MainLogic
 			{ 6, new FlyChasePoint() },
 			{ 7, new CarChasePoint() },
 			{ 8, new HousePoint() },
+			{ 9, new PoliceStationPoint() },
+			{ 10, new InterrogationPoint() },
 		};
 	}
 }

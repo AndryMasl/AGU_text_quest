@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,21 @@ namespace MainLogic
 		public virtual void SetVisibleAfterAction (Player player, PointBase point) 
 		{ 
 			IsVisible = false; 
+		}
+
+		protected void SetOtherActionNotVisible(PointBase point, List<int> actionNumbers) => SetOtherActionVisible(point, actionNumbers, false);
+
+		protected void SetOtherActionVisible(PointBase point, List<int> actionNumbers) => SetOtherActionVisible(point, actionNumbers, true);
+
+		protected void SetOtherActionVisible(PointBase point, List<int> actionNumbers, bool isVisible)
+		{
+			var actions = point?.Actions?.Where(x => actionNumbers.Contains(x.Number));
+
+			if (actions is null)
+				return;
+
+			foreach (var action in actions)
+				action.IsVisible = isVisible;
 		}
 
 		public Action<Player>? DoAfterAction { get; set; }
