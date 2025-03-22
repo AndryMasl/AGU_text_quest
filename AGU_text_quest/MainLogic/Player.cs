@@ -41,13 +41,26 @@ namespace MainLogic
 		public int counterPullUpHorizontalBarPoint = 0;
 
 		public int interrogationStatus = 0;
+		public List<int> smellyPantsAnswer = new List<int>();
+
 		#endregion
 
 		#region Global
 
 		public bool SilverGreg = false;
 
-		public bool interrogationResult = false;
+		public bool InterrogationResult 
+		{ 
+			get 
+			{
+				if (interrogationStatus >= 4)
+					return true;
+				else
+					return false;
+			} 
+		}
+
+		public List<int> houseAction = new List<int>();
 
 		#endregion
 

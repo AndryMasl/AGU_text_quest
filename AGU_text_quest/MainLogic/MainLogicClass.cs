@@ -170,8 +170,8 @@ namespace MainLogic
 		{
 			Console.WriteLine(point.Content + "\n");
 
-			point.DoBeforeAction?.Invoke();
 			point.SetActions();
+			point.DoBeforeAction?.Invoke();
 			point.ShowActions();
 		}
 	}
