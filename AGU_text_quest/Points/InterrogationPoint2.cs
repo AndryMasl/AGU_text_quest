@@ -66,6 +66,11 @@ namespace Points
 		private void DoAfterActionLocal(Player player)
 		{
 			player.interrogationStatus--;
+
+			if (!Player.Instance.SilverGreg)
+				return;
+
+			Console.WriteLine($"СильверГрэг: Хехехех, для этого и нужны дети.\n");
 		}
 	}
 

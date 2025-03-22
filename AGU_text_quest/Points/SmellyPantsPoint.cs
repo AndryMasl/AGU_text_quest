@@ -21,6 +21,7 @@ namespace Points
 				new SecondActionSmellyPantsPoint(),
 				new ThirdActionSmellyPantsPoint(),
 				new FourthActionSmellyPantsPoint(),
+				new FifthActionSmellyPantsPoint(),
 			};
 
 			DoBeforeAction = DoBeforeActionLocal;
@@ -29,40 +30,52 @@ namespace Points
 
 		private void DoAfterActionLocal()
 		{
-			Console.WriteLine($"Такой ответ сильно озадачил Никитина, он сел, опустил голову и ушел в себя. В его голове явно проносятся потоки мыслей, он пытается все обдумать.");
+			Console.WriteLine($"Такой ответ сильно озадачил Никитина, он сел, опустил голову и ушел в себя. В его голове явно проносятся потоки мыслей, он пытается все обдумать.\n");
 		}
 
 		private void DoBeforeActionLocal()
 		{
+			SetVisibleLocal();
+
+			if (Player.Instance.smellyPantsAnswer.Count == 0)
+			{
+				Actions?.ForEach(x => x.NextPointID = 14);
+			}
+			if (Player.Instance.smellyPantsAnswer.Count == 1)
+			{
+				Actions?.ForEach(x => x.NextPointID = 15);
+			}
+			if (Player.Instance.smellyPantsAnswer.Count == 2)
+			{
+				Actions?.ForEach(x => x.NextPointID = 16);
+			}
+			if (Player.Instance.smellyPantsAnswer.Count == 3)
+			{
+				Actions?.ForEach(x => x.NextPointID = 17);
+			}
+
 			if (!Player.Instance.SilverGreg)
 				return;
-
-			SetVisibleLocal();
 
 			if (Player.Instance.smellyPantsAnswer.Count == 0)
 			{
 				Console.WriteLine($"СильверГрэг от удивления приподнялся и приспустил очки.\n" +
 					$"СильверГрэг: В чем проблема этого парня?\n");
-
-				Actions?.ForEach(x => x.NextPointID = 14);
 			}
 
 			if (Player.Instance.smellyPantsAnswer.Count == 1)
 			{
 				Console.WriteLine($"СильверГрэг: У этого парня серьезные проблемы.\n");
-				Actions?.ForEach(x => x.NextPointID = 15);
 			}
 
 			if (Player.Instance.smellyPantsAnswer.Count == 2)
 			{
 				Console.WriteLine($"СильверГрэг: Я это уже слышал, он начинает мне надоедать.\n");
-				Actions?.ForEach(x => x.NextPointID = 16);
 			}
 
 			if (Player.Instance.smellyPantsAnswer.Count == 3)
 			{
 				Console.WriteLine($"СильверГрэг: Да выкинь ты уже эти трусы, задрал...\n");
-				Actions?.ForEach(x => x.NextPointID = 17);
 			}
 		}
 
@@ -78,9 +91,40 @@ namespace Points
 		}
 	}
 
+	internal class FifthActionSmellyPantsPoint : FifthAction
+	{
+		public override string ActionDescription => $"Леха, ты чего? Это же я {Player.Instance.Name}! Да, сильно ты изменился после свадьбы...";
+
+        public FifthActionSmellyPantsPoint()
+		{
+			IsAvailable = true;
+			NextPointID = 0;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			Console.WriteLine($"{Player.Instance.Name}, {Player.Instance.Name}... Хм...\n");
+			player.smellyPantsAnswer.Add(Number);
+		}
+	}
+
 	internal class FourthActionSmellyPantsPoint : FourthAction
 	{
-		public override string ActionDescription => "Есть человек, зовут Свят. Вот его визитка, позвони и скажи, что от Магепа";
+		public override string ActionDescription => "Есть человек, зовут Свят. Вот его визитка, позвони и скажи, что от Магера. Он поможет.";
+
+        public FourthActionSmellyPantsPoint()
+		{
+			IsAvailable = true;
+			NextPointID = 0;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			Console.WriteLine("Никитин берет визитку и крепко сжимает в руках.\n");
+			player.smellyPantsAnswer.Add(Number);
+		}
 	}
 
 	internal class ThirdActionSmellyPantsPoint : ThirdAction
@@ -101,7 +145,7 @@ namespace Points
 
 	internal class SecondActionSmellyPantsPoint : SecondAction
 	{
-		public override string ActionDescription => "А ты их снимать пробовал?";
+		public override string ActionDescription => "А ты их снимать пробовал? Не обязательно дрочить в трусы.";
 
 		public SecondActionSmellyPantsPoint()
 		{
@@ -118,7 +162,7 @@ namespace Points
 
 	internal class FirstActionSmellyPantsPoint : FirstAction
 	{
-		public override string ActionDescription => "Потому что так поется в легендарной песне!";
+		public override string ActionDescription => "Потому что так поётся в легендарной песне!";
 
         public FirstActionSmellyPantsPoint()
 		{
