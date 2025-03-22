@@ -35,11 +35,11 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			player.CounterPullUpHorizontalBarPoint++;
+			player.counterPullUpHorizontalBarPoint++;
 
-			if (player.CounterPullUpHorizontalBarPoint > 2)
+			if (player.counterPullUpHorizontalBarPoint > 2)
 			{
-				player.PullUpHorizontalBarPoint = true;
+				player.pullUpHorizontalBarPoint = true;
 				Console.WriteLine("Ух хорошо разогрелся прям...");
 			}
 		}
@@ -48,7 +48,7 @@ namespace Points
 
 		public override void SetVisibleAfterAction(Player player, PointBase point)
 		{
-			if (player.CounterPullUpHorizontalBarPoint > 3)
+			if (player.counterPullUpHorizontalBarPoint > 3)
 				IsVisible = false;
 		}
 	}
@@ -66,7 +66,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			player.CounterPullUpHorizontalBarPoint++;
+			player.counterPullUpHorizontalBarPoint++;
 		}
 
 		public override void SetVisibleAfterAction(Player player, PointBase point)
@@ -95,7 +95,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			if (player.PullUpHorizontalBarPoint)
+			if (player.pullUpHorizontalBarPoint)
 			{
 				Console.WriteLine($"{player.Name} совершает стримительный рывок и уже через секунду настигает странного мужика.");
 			}

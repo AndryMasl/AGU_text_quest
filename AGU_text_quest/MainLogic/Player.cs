@@ -37,15 +37,17 @@ namespace MainLogic
 
 		#region Local
 		
-		public bool PullUpHorizontalBarPoint = false;
-		public int CounterPullUpHorizontalBarPoint = 0;
+		public bool pullUpHorizontalBarPoint = false;
+		public int counterPullUpHorizontalBarPoint = 0;
 
-
+		public int interrogationStatus = 0;
 		#endregion
 
 		#region Global
 
 		public bool SilverGreg = false;
+
+		public bool interrogationResult = false;
 
 		#endregion
 

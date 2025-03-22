@@ -31,6 +31,7 @@ namespace MainLogic
 			{ 8, new HousePoint() },
 			{ 9, new PoliceStationPoint() },
 			{ 10, new InterrogationPoint() },
+			{ 11, new InterrogationPoint2() },
 		};
 	}
 }
