@@ -72,7 +72,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			Console.WriteLine($"{player.Name} напрыгивает на странного мужика. Мужик из последних сил откидывает Мема вперед. Под тяжестью {player.Name} мужик распластался на асфальте. Мем слишком далеко, не дотянуться.");
+			Console.WriteLine($"{player.Name} напрыгивает на странного мужика. Мужик из последних сил откидывает Мема вперед. Под тяжестью {player.Name}а мужик распластался на асфальте. Мем слишком далеко, не дотянуться.");
 		}
 
 		public override void SetVisibleBeforeAction(Player player) => IsVisible = false;

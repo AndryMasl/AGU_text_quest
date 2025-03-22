@@ -32,6 +32,7 @@ namespace MainLogic
 			{ 9, new PoliceStationPoint() },
 			{ 10, new InterrogationPoint() },
 			{ 11, new InterrogationPoint2() },
+			{ 12, new SmellyPantsPoint() },
 		};
 	}
 }

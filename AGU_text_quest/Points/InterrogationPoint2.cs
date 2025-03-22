@@ -18,9 +18,8 @@ namespace Points
 			{
 				new FirstActionInterrogationPoint2(),
 				new SecondActionInterrogationPoint2(),
-				//new ThirdActionInterrogationPoint2(),
-				//new FourthActionInterrogationPoint2(),
-				//new FifthActionInterrogationPoint2(),
+				new ThirdActionInterrogationPoint2(),
+				new FourthActionInterrogationPoint2(),
 			};
 
 			DoBeforeAction = DoBeforeActionLocal;
@@ -33,6 +32,40 @@ namespace Points
 
 			Console.WriteLine($"СильверГрэг ложится на стол между {Player.Name}ом и ментами, ногу закинул на ногу, смотрит в потолок и пускает столбы сигаретного дыма.\n" +
 				$"СильверГрэг: Напоминает дни моей бунтарской молодости.\n");
+		}
+	}
+
+	internal class FourthActionInterrogationPoint2 : FourthAction
+	{
+		public override string ActionDescription => "Мне это надоело, пора бить морды.";
+
+        public FourthActionInterrogationPoint2()
+        {
+			IsAvailable = true;
+			NextPointID = 13;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			player.interrogationStatus -= 2;
+		}
+	}
+
+	internal class ThirdActionInterrogationPoint2 : ThirdAction
+	{
+		public override string ActionDescription => "Вы о чем? Все общение сводится к: Пойди принеси пива, мелкий...";
+
+        public ThirdActionInterrogationPoint2()
+        {
+			IsAvailable = true;
+			NextPointID = 12;
+			DoAfterAction = DoAfterActionLocal;
+		}
+
+		private void DoAfterActionLocal(Player player)
+		{
+			player.interrogationStatus--;
 		}
 	}
 
