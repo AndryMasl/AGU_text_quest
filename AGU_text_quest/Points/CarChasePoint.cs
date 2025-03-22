@@ -44,7 +44,7 @@ namespace Points
 
 		public override void SetVisibleBeforeAction(Player player)
 		{
-			if (player.PullUpHorizontalBarPoint)
+			if (player.pullUpHorizontalBarPoint)
 				IsVisible = true;
 		}
 	}

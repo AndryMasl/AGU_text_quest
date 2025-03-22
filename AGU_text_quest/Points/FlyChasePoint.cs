@@ -36,7 +36,7 @@ namespace Points
 
         public override void SetVisibleBeforeAction(Player player)
 		{
-			if (player.PullUpHorizontalBarPoint)
+			if (player.pullUpHorizontalBarPoint)
 				IsVisible = true;
 		}
 
@@ -104,7 +104,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			if (player.PullUpHorizontalBarPoint)
+			if (player.pullUpHorizontalBarPoint)
 			{
 				Console.WriteLine($"{player.Name} перелетает через птеродактиля и еще несколько минут летит в воздухе. Затем {player.Name} совершает супергеройское приземление. Асфальт трескается под его ногами. \"Уф, слишком хорошо разогрелся.\"");
 			}
