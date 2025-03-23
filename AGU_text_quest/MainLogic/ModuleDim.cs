@@ -38,6 +38,8 @@ namespace MainLogic
 			{ 15, new InterrogationPoint4() },
 			{ 16, new InterrogationPoint5() },
 			{ 17, new InterrogationEndPoint() },
+			{ 18, new CorridorSectionPoint() },
+			{ 19, new WomanWithExplosivesPoint() },
 		};
 	}
 }
