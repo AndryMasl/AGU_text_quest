@@ -21,6 +21,7 @@ class Program
 			switch (answer)
 			{
 				case "start":
+				case "":
 					{
 						new MainLogicClass().MainCycle();
 						flag = false;
@@ -45,7 +46,7 @@ class Program
 		Console.WriteLine(
 			$"Главное меню\n" +
 			$"Введите одну из команд:\n" +
-			$"start - начать игру\n" +
+			$"start - начать игру (или нажми Enter)\n" +
 			$"end - выйти"
 			);
 	}
