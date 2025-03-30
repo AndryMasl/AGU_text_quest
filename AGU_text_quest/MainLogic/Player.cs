@@ -43,6 +43,13 @@ namespace MainLogic
 		public int interrogationStatus = 0;
 		public List<int> smellyPantsAnswer = new List<int>();
 
+		public int fatTril = 0;
+		public int anecdoteCounter = 0;
+		public List<int> hotelBarAnswer = new List<int>();
+		public bool kojimaNumber = false;
+		public int tacos = 0;
+		public List<int> fightWithSilverGregAction = new List<int>();
+
 		#endregion
 
 		#region Global
@@ -61,6 +68,10 @@ namespace MainLogic
 		}
 
 		public List<int> houseAction = new List<int>();
+
+		public int dresMoney = 0;
+
+		public List<string> letters = new List<string>();
 
 		#endregion
 
