@@ -16,6 +16,9 @@ namespace MainLogic
 			{ "save", ConsoleCommand.Save },
 			{ "status", ConsoleCommand.ShowStatus },
 			{ "setsg", ConsoleCommand.SetSilverGreg },
+			{ "setft", ConsoleCommand.SetFatTril },
+			{ "settaco", ConsoleCommand.SetTaco },
+			{ "setdm", ConsoleCommand.SetDresMoney },
 		};
 
 		public static Dictionary<int, PointBase> PointDictionary = new Dictionary<int, PointBase>() 
@@ -40,6 +43,15 @@ namespace MainLogic
 			{ 17, new InterrogationEndPoint() },
 			{ 18, new CorridorSectionPoint() },
 			{ 19, new WomanWithExplosivesPoint() },
+			{ 20, new AfterlifePoint() },
+			{ 21, new KonpekiPlazaPoint() },
+			{ 22, new HotelRoomPoint() },
+			{ 23, new HotelBarPoint() },
+			{ 24, new HomelessDrePoint() },
+			{ 25, new KojimaPoint() },
+			{ 26, new DeliMersPoint() },
+			{ 27, new MotelPoint() },
+			{ 28, new FightWithSilverGregPoint() },
 		};
 	}
 }

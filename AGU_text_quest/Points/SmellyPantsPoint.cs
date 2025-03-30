@@ -35,7 +35,7 @@ namespace Points
 
 		private void DoBeforeActionLocal()
 		{
-			SetVisibleLocal();
+			SetVisibleByList(Player.Instance.smellyPantsAnswer);
 
 			if (Player.Instance.smellyPantsAnswer.Count == 0)
 			{
@@ -76,17 +76,6 @@ namespace Points
 			if (Player.Instance.smellyPantsAnswer.Count == 3)
 			{
 				Console.WriteLine($"СильверГрэг: Да выкинь ты уже эти трусы, задрал...\n");
-			}
-		}
-
-		private void SetVisibleLocal()
-		{
-			foreach (var action in Actions)
-			{
-				if (Player.Instance.smellyPantsAnswer.Contains(action.Number))
-				{
-					action.IsVisible = false;
-				}
 			}
 		}
 	}

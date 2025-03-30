@@ -72,12 +72,14 @@ namespace Points
         public ThirdActionHousePoint()
         {
 			IsAvailable = true;
-			NextPointID = 25;
+			NextPointID = 20;
 			DoAfterAction = DoAfterActionLocal;
 		}
 
 		private void DoAfterActionLocal(Player player)
 		{
+			Console.WriteLine($"{player.Name}, осторожно и недоверчиво открыл зеленую коробку. Она пуста. \"Не может быть!\" - подумал {player.Name}. И правда, на дне оказалась маленькая лакированная визитка: Трил Декстор-Пил, место встречи: Посмертие. Что ж, посмотрим на это ваше Посмертие, подумал {player.Name} и сунул визитку в карман.\n");
+
 			player.houseAction.Add(Number);
 		}
 	}
