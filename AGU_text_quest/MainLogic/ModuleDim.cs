@@ -16,6 +16,9 @@ namespace MainLogic
 			{ "save", ConsoleCommand.Save },
 			{ "status", ConsoleCommand.ShowStatus },
 			{ "setsg", ConsoleCommand.SetSilverGreg },
+			{ "setft", ConsoleCommand.SetFatTril },
+			{ "settaco", ConsoleCommand.SetTaco },
+			{ "setdm", ConsoleCommand.SetDresMoney },
 		};
 
 		public static Dictionary<int, PointBase> PointDictionary = new Dictionary<int, PointBase>() 

@@ -36,5 +36,20 @@ namespace MainLogic
 			else 
 				player.SilverGreg = false;
 		}
+
+		internal static void SetFatTril(PointBase point, Player player, int value)
+		{
+			player.fatTril = value;
+		}
+
+		internal static void SetTaco(PointBase point, Player player, int value)
+		{
+			player.tacos = value;
+		}
+
+		internal static void SetDresMoney(PointBase point, Player player, int value)
+		{
+			player.dresMoney = value;
+		}
 	}
 }
