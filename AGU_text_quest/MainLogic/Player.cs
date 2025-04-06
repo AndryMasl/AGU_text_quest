@@ -75,6 +75,8 @@ namespace MainLogic
 
 		public List<string> letters = new List<string>();
 
+		public bool Am = false;
+
 		#endregion
 
 		#endregion

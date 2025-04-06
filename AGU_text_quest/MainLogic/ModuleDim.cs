@@ -54,6 +54,8 @@ namespace MainLogic
 			{ 26, new DeliMersPoint() },
 			{ 27, new MotelPoint() },
 			{ 28, new FightWithSilverGregPoint() },
+
+			{ 30, new SchoolPoint() },
 		};
 	}
 }
