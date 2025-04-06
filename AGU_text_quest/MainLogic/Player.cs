@@ -41,6 +41,16 @@ namespace MainLogic
 		public int counterPullUpHorizontalBarPoint = 0;
 
 		public int interrogationStatus = 0;
+		public List<int> smellyPantsAnswer = new List<int>();
+
+		public int fatTril = 0;
+		public int anecdoteCounter = 0;
+		public List<int> hotelBarAnswer = new List<int>();
+		public bool kojimaNumber = false;
+		public int tacos = 0;
+		public List<int> fightWithSilverGregAction = new List<int>();
+
+		#endregion
 
         public int monetGold = 0;
         public int monetPullGold = 0;
@@ -50,9 +60,22 @@ namespace MainLogic
 
         public bool SilverGreg = false;
 
-		public bool interrogationResult = false;
+		public bool InterrogationResult 
+		{ 
+			get 
+			{
+				if (interrogationStatus >= 4)
+					return true;
+				else
+					return false;
+			} 
+		}
 
-		#endregion
+		public List<int> houseAction = new List<int>();
+
+		public int dresMoney = 0;
+
+		public List<string> letters = new List<string>();
 
 		#endregion
 	}

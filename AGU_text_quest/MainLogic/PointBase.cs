@@ -35,5 +35,17 @@ namespace MainLogic
 			foreach (var action in Actions?.Where(x => x.IsVisible))
 				Console.WriteLine(action.Number + ". " + action.ActionDescription);
 		}
+
+
+		public void SetVisibleByList(List<int> ansvers, bool value = false)
+		{
+			foreach (var action in Actions)
+			{
+				if (ansvers.Contains(action.Number))
+				{
+					action.IsVisible = value;
+				}
+			}
+		}
 	}
 }
