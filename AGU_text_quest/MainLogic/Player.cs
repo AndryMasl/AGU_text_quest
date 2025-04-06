@@ -52,8 +52,6 @@ namespace MainLogic
 
 		#endregion
 
-        public int monetGold = 0;
-        public int monetPullGold = 0;
         #endregion
 
         #region Global

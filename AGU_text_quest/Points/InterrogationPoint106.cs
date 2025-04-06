@@ -51,7 +51,7 @@ namespace Points
 
         private void DoAfterActionLocal(Player player)
         {
-            player.monetGold++;
+            player.dresMoney++;
             Console.WriteLine($"{Player.Instance.Name} молча подтягивается 5 раз. И спрыгивает с турника со всей силы и проваливается вниз....");
         }
     }
