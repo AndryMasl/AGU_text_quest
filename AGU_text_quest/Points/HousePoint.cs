@@ -147,11 +147,14 @@ namespace Points
 	{
 		public override string ActionDescription => "Посмотреть содержимое Оранжевой коробки.";
 
-		public SecondActionHousePoint()
-		{
-			DoAfterAction = DoAfterActionLocal;
-		}
+        public SecondActionHousePoint()
+        {
+            IsAvailable = true;
+            NextPointID = 100;
 
+            DoAfterAction = DoAfterActionLocal;
+        }
+    
 		private void DoAfterActionLocal(Player player)
 		{
 			player.houseAction.Add(Number);
@@ -161,11 +164,13 @@ namespace Points
 	internal class FirstActionHousePoint : FirstAction
 	{
 		public override string ActionDescription => "Посмотреть содержимое Красной коробки.";
-
         public FirstActionHousePoint()
         {
-			DoAfterAction = DoAfterActionLocal;
-		}
+            IsAvailable = true;
+            NextPointID = 110;
+
+            DoAfterAction = DoAfterActionLocal;
+        }
 
         private void DoAfterActionLocal(Player player)
 		{

@@ -52,9 +52,11 @@ namespace MainLogic
 
 		#endregion
 
-		#region Global
+        #endregion
 
-		public bool SilverGreg = false;
+        #region Global
+
+        public bool SilverGreg = false;
 
 		public int InterrogationResult 
 		{ 
@@ -76,8 +78,6 @@ namespace MainLogic
 		public List<string> letters = new List<string>();
 
 		public bool Am = false;
-
-		#endregion
 
 		#endregion
 	}

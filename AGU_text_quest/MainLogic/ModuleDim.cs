@@ -56,6 +56,28 @@ namespace MainLogic
 			{ 28, new FightWithSilverGregPoint() },
 
 			{ 30, new SchoolPoint() },
+			
+			{ 100, new InterrogationPoint100() },
+			{ 101, new InterrogationPoint101() },
+			{ 102, new InterrogationPoint102() },
+			{ 103, new InterrogationPoint103() },
+			{ 104, new InterrogationPoint104() },
+			{ 105, new InterrogationPoint105() },
+			{ 106, new InterrogationPoint106() },
+			{ 107, new InterrogationPoint107() },
+			{ 108, new InterrogationPoint108() },
+			{ 109, new InterrogationPoint109() },
+			{ 110, new InterrogationPoint110() },
+			{ 111, new InterrogationPoint111() },
+			{ 112, new InterrogationPoint112() },
+			{ 113, new InterrogationPoint113() },
+			{ 114, new InterrogationPoint114() },
+			{ 115, new InterrogationPoint115() },
+			{ 116, new InterrogationPoint116() },
+			{ 117, new InterrogationPoint117() },
+			{ 118, new InterrogationPoint118() },
+			{ 119, new InterrogationPoint119() },
+			{ 120, new InterrogationPoint120() },
 		};
 	}
 }
