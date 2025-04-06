@@ -76,7 +76,7 @@ namespace Points
 
 			Console.WriteLine("СильверГрэг: Нашел у кого спрашивать... Да он искренен только в койке проститутки. Я тебе так скажу ");
 
-			if (Player.Instance.InterrogationResult)
+			if (Player.Instance.InterrogationResult > 0)
 				Console.WriteLine("можешь забыть о них, больше не встретимся.");
 			else 
 				Console.WriteLine("они от нас уже не отвяжутся.");
