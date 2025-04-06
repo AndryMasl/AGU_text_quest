@@ -20,8 +20,18 @@ namespace Points
 				new ThirdActionSchoolPoint(),
 				new FourthActionSchoolPoint(),
 			};
+
+			DoBeforeAction = DoBeforeActionLocal;
 		}
-    }
+
+		private void DoBeforeActionLocal()
+		{
+			if (Player.Instance.SilverGreg)
+			{
+				Console.WriteLine($"Рядом, на скамейке из 3x черных подушек, появляется СильверГрэг, он выдыхает дым сигары и говорит: Завтра в школу не надо... Ура!!!\n");
+			}
+		}
+	}
 
 	internal class FourthActionSchoolPoint : FourthAction
 	{
@@ -33,7 +43,13 @@ namespace Points
 	internal class ThirdActionSchoolPoint : ThirdAction
 	{
 		public override string ActionDescription => "Спуститься в подвал Тутаева.";
-	}
+
+        public ThirdActionSchoolPoint()
+        {
+            IsAvailable = true;
+			NextPointID = 31;
+        }
+    }
 
 	internal class SecondActionSchoolPoint : SecondAction
 	{

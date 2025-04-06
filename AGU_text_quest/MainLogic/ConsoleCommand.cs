@@ -84,5 +84,13 @@ namespace MainLogic
 			player.houseAction.Add(SecondAction.ACTION_NUMBER);
 			player.houseAction.Add(ThirdAction.ACTION_NUMBER);
 		}
+
+		internal static void SetAm(PointBase point, Player player, int value)
+		{
+			if (value > 0)
+				player.Am = true;
+			else
+				player.Am = false;
+		}
 	}
 }
