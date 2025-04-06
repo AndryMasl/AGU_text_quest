@@ -50,13 +50,17 @@ namespace MainLogic
 		public int tacos = 0;
 		public List<int> fightWithSilverGregAction = new List<int>();
 
+		public int TutaevCounter = 0;
+		public List<int> pitAnswer = new List<int>();
+		public List<int> AmAnswer = new List<int>();
+
 		#endregion
 
-        #endregion
 
-        #region Global
 
-        public bool SilverGreg = false;
+		#region Global
+
+		public bool SilverGreg = false;
 
 		public int InterrogationResult 
 		{ 
@@ -78,6 +82,8 @@ namespace MainLogic
 		public List<string> letters = new List<string>();
 
 		public bool Am = false;
+
+		#endregion
 
 		#endregion
 	}
