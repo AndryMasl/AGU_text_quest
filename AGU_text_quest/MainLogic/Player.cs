@@ -41,11 +41,14 @@ namespace MainLogic
 		public int counterPullUpHorizontalBarPoint = 0;
 
 		public int interrogationStatus = 0;
-		#endregion
 
-		#region Global
+        public int monetGold = 0;
+        public int monetPullGold = 0;
+        #endregion
 
-		public bool SilverGreg = false;
+        #region Global
+
+        public bool SilverGreg = false;
 
 		public bool interrogationResult = false;
 

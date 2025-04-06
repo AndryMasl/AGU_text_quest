@@ -48,6 +48,6 @@ namespace MainLogic
 				action.IsVisible = isVisible;
 		}
 
-		public Action<Player>? DoAfterAction { get; set; }
+        public Action<Player>? DoAfterAction { get; set; }
 	}
 }

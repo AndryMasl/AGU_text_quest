@@ -48,10 +48,21 @@ namespace Points
 	internal class SecondActionHousePoint : SecondAction
 	{
 		public override string ActionDescription => "Посмотреть содержимое Оранжевой коробки.";
-	}
+
+        public SecondActionHousePoint()
+        {
+            IsAvailable = true;
+            NextPointID = 100;
+        }
+    }
 
 	internal class FirstActionHousePoint : FirstAction
 	{
 		public override string ActionDescription => "Посмотреть содержимое Красной коробки.";
-	}
+        public FirstActionHousePoint()
+        {
+            IsAvailable = true;
+            NextPointID = 110;
+        }
+    }
 }
