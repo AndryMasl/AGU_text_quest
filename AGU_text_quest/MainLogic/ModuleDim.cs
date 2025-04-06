@@ -19,6 +19,8 @@ namespace MainLogic
 			{ "setft", ConsoleCommand.SetFatTril },
 			{ "settaco", ConsoleCommand.SetTaco },
 			{ "setdm", ConsoleCommand.SetDresMoney },
+			{ "setl", ConsoleCommand.SetLetters },
+			{ "setha", ConsoleCommand.SetHouseAction },
 		};
 
 		public static Dictionary<int, PointBase> PointDictionary = new Dictionary<int, PointBase>() 
@@ -53,6 +55,8 @@ namespace MainLogic
 			{ 27, new MotelPoint() },
 			{ 28, new FightWithSilverGregPoint() },
 
+			{ 30, new SchoolPoint() },
+			
 			{ 100, new InterrogationPoint100() },
 			{ 101, new InterrogationPoint101() },
 			{ 102, new InterrogationPoint102() },

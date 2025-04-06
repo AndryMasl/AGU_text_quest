@@ -51,5 +51,38 @@ namespace MainLogic
 		{
 			player.dresMoney = value;
 		}
+
+		internal static void SetLetters(PointBase point, Player player, int value)
+		{
+			if (value == 0)
+			{
+				Player.Instance.letters.Add("a");
+				Player.Instance.letters.Add("b");
+				Player.Instance.letters.Add("o");
+				Player.Instance.letters.Add("b");
+				Player.Instance.letters.Add("a");
+			}
+			if (value == 1)
+			{
+				Player.Instance.letters.Add("a");
+				Player.Instance.letters.Add("b");
+			}
+			if (value == 2)
+			{
+				Player.Instance.letters.Add("o");
+			}
+			if (value == 3)
+			{
+				Player.Instance.letters.Add("b");
+				Player.Instance.letters.Add("a");
+			}
+		}
+
+		internal static void SetHouseAction(PointBase point, Player player, int value)
+		{
+			player.houseAction.Add(FirstAction.ACTION_NUMBER);
+			player.houseAction.Add(SecondAction.ACTION_NUMBER);
+			player.houseAction.Add(ThirdAction.ACTION_NUMBER);
+		}
 	}
 }

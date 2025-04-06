@@ -58,14 +58,16 @@ namespace MainLogic
 
         public bool SilverGreg = false;
 
-		public bool InterrogationResult 
+		public int InterrogationResult 
 		{ 
 			get 
 			{
 				if (interrogationStatus >= 4)
-					return true;
+					return 1;
+				if (interrogationStatus <= -4)
+					return -1;
 				else
-					return false;
+					return 0;
 			} 
 		}
 
@@ -74,6 +76,8 @@ namespace MainLogic
 		public int dresMoney = 0;
 
 		public List<string> letters = new List<string>();
+
+		public bool Am = false;
 
 		#endregion
 	}
