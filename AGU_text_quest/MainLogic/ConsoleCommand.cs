@@ -92,5 +92,29 @@ namespace MainLogic
 			else
 				player.Am = false;
 		}
+
+		internal static void SetInterrogationResult(PointBase point, Player player, int value)
+		{
+			if (value > 0)
+			{
+				player.interrogationStatus = 4;
+			}
+			else if (value == 0)
+			{
+				player.interrogationStatus = 0;
+			}
+			else
+			{
+				player.interrogationStatus = -4;
+			}
+		}
+
+		internal static void SetKojimaNumber(PointBase point, Player player, int value)
+		{
+			if (value > 0)
+				player.kojimaNumber = true;
+			else
+				player.kojimaNumber = false;
+		}
 	}
 }

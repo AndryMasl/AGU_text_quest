@@ -75,7 +75,7 @@ namespace MainLogic
 			if (int.TryParse(str, out var actionNumber))
 				return CommandType.Action;
 
-			Regex regex = new Regex(@"\w+\s\d+");
+			Regex regex = new Regex(@"\w+\s.?\d+");
 			if (regex.IsMatch(str))
 				return CommandType.ConsoleCommandWithValue;
 
@@ -99,7 +99,7 @@ namespace MainLogic
 			if (str is null)
 				return false;
 
-			Regex regex = new Regex(@"\w+\s\d+");
+			Regex regex = new Regex(@"\w+\s.?\d+");
 
 			if (!regex.IsMatch(str))
 				return false;

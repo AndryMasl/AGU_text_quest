@@ -22,6 +22,9 @@ namespace MainLogic
 			{ "setl", ConsoleCommand.SetLetters },
 			{ "setha", ConsoleCommand.SetHouseAction },
 			{ "setam", ConsoleCommand.SetAm },
+			{ "setir", ConsoleCommand.SetInterrogationResult },
+			{ "setkn", ConsoleCommand.SetKojimaNumber },
+
 		};
 
 		public static Dictionary<int, PointBase> PointDictionary = new Dictionary<int, PointBase>() 
@@ -60,6 +63,8 @@ namespace MainLogic
 			{ 31, new TutaevsBasementPoint() },
 			{ 32, new PitPoint() },
 			{ 33, new AmFightPoint() },
+			{ 34, new IsHeDyingPoint() },
+			{ 35, new SuburbPoint() },
 			
 			{ 100, new InterrogationPoint100() },
 			{ 101, new InterrogationPoint101() },
