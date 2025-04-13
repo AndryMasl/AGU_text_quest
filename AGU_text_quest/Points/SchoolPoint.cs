@@ -37,8 +37,12 @@ namespace Points
 	{
 		public override string ActionDescription => "Поболтать с охранником.";
 
-		// TODO: GREG
-	}
+        public FourthActionSchoolPoint()
+        {
+            IsAvailable = true;
+            NextPointID = 121;
+        }
+    }
 
 	internal class ThirdActionSchoolPoint : ThirdAction
 	{
@@ -55,13 +59,21 @@ namespace Points
 	{
 		public override string ActionDescription => "Зайти к Кабзону.";
 
-		// TODO: GREG
-	}
+        public SecondActionSchoolPoint()
+        {
+            IsAvailable = true;
+            NextPointID = 131;
+        }
+    }
 
 	internal class FirstActionSchoolPoint : FirstAction
 	{
 		public override string ActionDescription => "Зайти к Тольне.";
 
-		// TODO: GREG
-	}
+        public FirstActionSchoolPoint()
+        {
+            IsAvailable = true;
+            NextPointID = 126;
+        }
+    }
 }
