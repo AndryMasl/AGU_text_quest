@@ -36,6 +36,14 @@ namespace Points
         {
             IsAvailable = true;
             NextPointID = 8;
+            DoAfterAction = DoAfterActionLocal;
+        }
+        private void DoAfterActionLocal(Player player)
+        {
+            player.dresMoney++;
+            player.letters.Add("a");
+            player.letters.Add("b");
+            Console.WriteLine($"{Player.Instance.Name} отдает монету ГолдДрэ и говорит СПС)");
         }
     }
 

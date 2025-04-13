@@ -97,6 +97,11 @@ namespace MainLogic
 			{ 128, new InterrogationPoint128() },
 			{ 129, new InterrogationPoint129() },
 			{ 130, new InterrogationPoint130() },
+			{ 131, new InterrogationPoint131() },
+			{ 132, new InterrogationPoint132() },
+			{ 133, new InterrogationPoint133() },
+			{ 134, new InterrogationPoint134() },
+			{ 135, new InterrogationPoint135() },
 		};
 	}
 }
