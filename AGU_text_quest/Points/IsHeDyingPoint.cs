@@ -57,7 +57,7 @@ namespace Points
 
 			Console.WriteLine($"{Player.Instance.Name}: Не грусти, у тебя все будет хорошо.\nПосле этих слов {Player.Instance.Name} закрывает глаза и показалось, что он наконец все понял, но что именно...\n");
 
-			Console.WriteLine($"Вот и настал день когда {Player.Instance.Name} умер. Небеса разверзлись и сам господь спустился, чтобы встретить его душу. Господь сказал: Нееее, так не пойдет, {Player.Instance.Name}. Мы же с тобой договорились!!! Я там, а ты здесь!!!...\nКонец?\n");
+			Console.WriteLine($"Вот и настал день когда {Player.Instance.Name} умер. Небеса разверзлись и сам господь спустился, чтобы встретить его душу. И Господь сказал: Нееее, так не пойдет, {Player.Instance.Name}. Мы же с тобой договорились!!! Я там, а ты здесь!!!...\nКонец?\n");
 		}
 
 		public override void SetVisibleBeforeAction(Player player)
