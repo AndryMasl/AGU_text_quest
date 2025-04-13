@@ -6,7 +6,7 @@ class Program
 	{
 		Console.WriteLine("Hello, Player!");
 
-		ShowGameManu();testc git
+		ShowGameManu();
 		GetAnswerForManu();
 	}
 
