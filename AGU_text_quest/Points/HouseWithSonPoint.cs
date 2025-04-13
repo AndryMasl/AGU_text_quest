@@ -152,7 +152,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			Console.WriteLine($"{Player.Instance.Name}: \"И когда наступит это твое потом? Опять ночью спать не будешь? А потом вырубишься прям на уроке? Нет так не пойдет, марш делать домашку!!\"Мем: \"Ладно, ладно, я уже иду. Но ты же помнишь, что обещал погулять со мной в эту Сб?\"\n{Player.Instance.Name}: \"Конечно помню!!\"");
+			Console.WriteLine($"{Player.Instance.Name}: \"И когда наступит это твое потом? Опять ночью спать не будешь? А потом вырубишься прям на уроке? Нет так не пойдет, марш делать домашку!!\"\nМем: \"Ладно, ладно, я уже иду. Но ты же помнишь, что обещал погулять со мной в эту Сб?\"\n{Player.Instance.Name}: \"Конечно помню!!\"\n");
 		}
 
 		public override void SetVisibleBeforeAction(Player player) => IsVisible = false;

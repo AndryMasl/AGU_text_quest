@@ -25,7 +25,7 @@ namespace Points
 
 		private void DoAfterActionLocal()
 		{
-			Console.WriteLine($"{Player.Name} подходит к турнику. Ему предстоит легкая тренировочка. Всего 5 по 5 подтягивания, 5 по 5 брусья, 5 по 5 отжимания, 3 по по 10 пресс. Ничего нового.");
+			Console.WriteLine($"{Player.Name} подходит к турнику. Ему предстоит легкая тренировочка. Всего 5 по 5 подтягивания, 5 по 5 брусья, 5 по 5 отжимания, 3 по 10 пресс. Ничего нового.");
 		}
 	}
 
@@ -47,7 +47,7 @@ namespace Points
 
 	internal class SecondActionWalkWithSonPoint : SecondAction
 	{
-		public override string ActionDescription => "Ну и дурачек.";
+		public override string ActionDescription => "Ну и дурачок.";
 
         public SecondActionWalkWithSonPoint()
         {

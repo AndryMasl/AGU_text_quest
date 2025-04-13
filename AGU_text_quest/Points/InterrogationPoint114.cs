@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint114 : PointBase
     {
-        public override string Content => $"{Player.Name} и GoldDre пошли в МУМУ. Качок съел все МУМУ вместе с персоналом. 'Я готов идти на дело' - сказал качок. Юнис вместе с качком поехаали в Лос Антос. Пригоня к падику на лежало 2 аптечки, 2 броника и 2 узишки";
+        public override string Content => $"{Player.Name} и GoldDre пошли в МУМУ. Качок съел все МУМУ вместе с персоналом. 'Я готов идти на дело' - сказал качок. Юнис вместе с качком поехали в Лос Антос. Пригоня к падику на асфальте лежало 2 аптечки, 2 броника и 2 узишки";
         public InterrogationPoint114()
         {
             Actions = new()
