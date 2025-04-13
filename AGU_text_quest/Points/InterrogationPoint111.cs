@@ -55,7 +55,7 @@ namespace Points
         public ThirdActionInterrogationPoint111()
         {
             IsAvailable = false;
-            MassageAfterAction = $"{Player.Instance.Name} вспомнинает , что адрес похож на Сан Андрес , но ГТА 4 круче вроде...";
+            MassageAfterAction = $"{Player.Instance.Name} вспоминает , что адрес похож на Сан Андрес , но ГТА 4 круче вроде...";
         }
     }
 }

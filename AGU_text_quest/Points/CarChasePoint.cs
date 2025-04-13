@@ -9,7 +9,7 @@ namespace Points
 {
 	internal class CarChasePoint : PointBase
 	{
-		public override string Content => $"{Player.Instance.Name} побежал к Мему, но его опередила ментовская тачка. Дверь открылась и чья-то рука схватила Мема за шиворот и швырнула на заднее сидение. Когда {Player.Instance.Name} подбежал к багажнику, водитель вжал пидаль в пол.";
+		public override string Content => $"{Player.Instance.Name} побежал к Мему, но его опередила ментовская тачка. Дверь открылась и чья-то рука схватила Мема за шиворот и швырнула на заднее сидение. Когда {Player.Instance.Name} подбежал к багажнику, водитель вжал педаль в пол.";
 
 		public CarChasePoint()
 		{

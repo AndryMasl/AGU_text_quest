@@ -9,7 +9,7 @@ namespace Points
 {
 	internal class RunChasePoint : PointBase
 	{
-		public override string Content => $"До странного мужика рукой подать, кажется вот вот и можно будет дотянуться. Вокруг мелькают здания, улицы. кажется все потеряло смысл.";
+		public override string Content => $"До странного мужика рукой подать, кажется вот вот и можно будет дотянуться. Вокруг мелькают здания, улицы. Кажется все потеряло смысл.";
 
         public RunChasePoint()
         {

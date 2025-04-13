@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint116 : PointBase
     {
-        public override string Content => $"{Player.Name} и GoldDre стоят у квартиры Белика. Они звонят в звонок. Им открывает дверь разъяренный Никита у которого в заложницах Блохина и к виску Блохиной приложен пестик. 'Думали я так легко отдам ваш секретные буквы' - сказал Белик";
+        public override string Content => $"{Player.Name} и GoldDre стоят у квартиры Белика. Они звонят в звонок. Им открывает дверь разъяренный Никита у которого в заложницах Блохина и к виску Блохиной приложен пестик. 'Думали я так легко отдам ваши секретные буквы' - сказал Белик";
         public InterrogationPoint116()
         {
             Actions = new()
