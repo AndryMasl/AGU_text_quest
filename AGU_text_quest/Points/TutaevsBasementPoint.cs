@@ -79,8 +79,9 @@ namespace Points
 				if (player.SilverGreg)
 				{
 					Console.WriteLine("СильверГрэг: Ох, сейчас что-то будет...\n");
-					IsAvailable = true;
 				}
+
+				IsAvailable = true;
 			}
 			if (Player.Instance.TutaevCounter == 3)
 			{
