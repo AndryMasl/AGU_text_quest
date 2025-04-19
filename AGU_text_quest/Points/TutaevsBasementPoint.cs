@@ -41,7 +41,7 @@ namespace Points
 
 	internal class SecondActionTutaevsBasement : SecondAction
 	{
-		public override string ActionDescription => "Взять ключи от мотиса.";
+		public override string ActionDescription => "Взять ключи от матиса.";
 
 		// TODO: GREG
 	}
@@ -62,7 +62,7 @@ namespace Points
 		{
 			if (Player.Instance.TutaevCounter == 0)
 			{
-				Console.WriteLine($"Весь подвал начинает трястись. Землятресение? Нет это Тутаве дрыгается в стене.\nТутаев: Вот так я в молодости, вот так!\n");
+				Console.WriteLine($"Весь подвал начинает трястись. Землетрясение? Нет это Тутаве дрыгается в стене.\nТутаев: Вот так я в молодости, вот так!\n");
 
 				if (player.SilverGreg)
 				{

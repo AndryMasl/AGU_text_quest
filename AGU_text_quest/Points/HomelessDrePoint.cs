@@ -9,7 +9,7 @@ namespace Points
 {
 	internal class HomelessDrePoint : PointBase
 	{
-		public override string Content => $"Как же ты низко пал, - подумал {Player.Instance.Name}, - рамызгоная, вытертая до блеска куртка, неопрятная борода, рваные берцы...\nДре побрымчал мелочью в стакане, который держал в руках. Дрэ протянул стакан {Player.Instance.Name}у со словами: Мелочи на galant 8 не найдется?";
+		public override string Content => $"Как же ты низко пал, - подумал {Player.Instance.Name}, - замызганная, вытертая до блеска куртка, неопрятная борода, рваные берцы...\nДре побренчал мелочью в стакане, который держал в руках. Дрэ протянул стакан {Player.Instance.Name}у со словами: Мелочи на galant 8 не найдется?";
 
         public HomelessDrePoint()
         {
@@ -26,7 +26,7 @@ namespace Points
 
 	internal class FifthActionHomelessDrePoint : FifthAction
 	{
-		public override string ActionDescription => "Пнуть бомда.";
+		public override string ActionDescription => "Пнуть бомжа.";
 
         public FifthActionHomelessDrePoint()
         {
@@ -53,7 +53,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			Console.WriteLine($"{Player.Instance.Name} со словами: Дружба и деньги не имеют ничего общего, - разварачивается и уходит.\n");
+			Console.WriteLine($"{Player.Instance.Name} со словами: Дружба и деньги не имеют ничего общего, - разворачивается и уходит.\n");
 		}
 	}
 
@@ -71,7 +71,7 @@ namespace Points
 		private void DoAfterActionLocal(Player player)
 		{
 			player.dresMoney++;
-			Console.WriteLine($"{Player.Instance.Name} кидает монетку в стакан. Дре весело трясет стаканом и слушает как брымчат монетки.\nДер: Да хранит тебя всевышний, братишка...\n");
+			Console.WriteLine($"{Player.Instance.Name} кидает монетку в стакан. Дре весело трясет стаканом и слушает как бренчат монетки.\nДер: Да хранит тебя всевышний, братишка...\n");
 		}
 	}
 
@@ -88,7 +88,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			Console.WriteLine($"{Player.Instance.Name} многократно повторяет слово: работа. Дре начинает варчать, затем быстро отжимается, вскакивает и кудато убегает.\n");
+			Console.WriteLine($"{Player.Instance.Name} многократно повторяет слово: работа. Дре начинает ворчать, затем быстро отжимается, вскакивает и куда-то убегает.\n");
 		}
 	}
 

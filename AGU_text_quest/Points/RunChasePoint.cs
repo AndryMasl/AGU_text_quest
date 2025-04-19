@@ -36,7 +36,7 @@ namespace Points
 
 		private void DoAfterActionLocal(Player player)
 		{
-			Console.WriteLine($"{player.Name} бьет фронт-кик. Мужик улитает в стратосферу. Мем кубарем катится в сторону. Переборщил, Мем слишком далеко укатился.");
+			Console.WriteLine($"{player.Name} бьет фронт-кик. Мужик улетает в стратосферу. Мем кубарем катится в сторону. Переборщил, Мем слишком далеко укатился.");
 		}
 
 		public override void SetVisibleBeforeAction(Player player)
