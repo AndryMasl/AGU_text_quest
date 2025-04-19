@@ -36,15 +36,23 @@ namespace Points
 	{
 		public override string ActionDescription => "Взять муляж калаша.";
 
-		// TODO: GREG
-	}
+        public ThirdActionTutaevsBasement()
+        {
+            IsAvailable = false;
+            MassageAfterAction = $"Муляж калаша , как сэкс в резинке. Юнис достает свой ПЗРК и разъебывает все вокруг. Но никак не решает проблему.";
+        }
+    }
 
 	internal class SecondActionTutaevsBasement : SecondAction
 	{
 		public override string ActionDescription => "Взять ключи от матиса.";
 
-		// TODO: GREG
-	}
+        public SecondActionTutaevsBasement()
+        {
+            IsAvailable = false;
+            MassageAfterAction = $"Опа) Юнис бежит к мотису, открывает дверь , а внутри салона все просто от новой крутой бехи. Юнис завел тачку , нажал на газ и стрелка спидометра показала сразу 8000000 км/ч , Юнис не справился с управлением и въехал в зеленый магазинчик на углу и снес его. Юнис вылез из тачки и вернулся обратно на локацию.";
+        }
+    }
 
 	internal class FirstActionTutaevsBasement : FirstAction
 	{

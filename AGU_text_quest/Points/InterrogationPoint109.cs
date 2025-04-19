@@ -37,6 +37,12 @@ namespace Points
         {
             IsAvailable = true;
             NextPointID = 8;
+            DoAfterAction = DoAfterActionLocal;
+        }
+        private void DoAfterActionLocal(Player player)
+        {
+            player.letters.Add("o");
+            Console.WriteLine($"{Player.Instance.Name} Полурадостный покидает бар)");
         }
     }
 }
