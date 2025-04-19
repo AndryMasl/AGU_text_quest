@@ -41,7 +41,7 @@ namespace Points
         public FifthActionInterrogationPoint()
         {
 			IsAvailable = false;
-			MassageAfterAction = $"Никитен: Ах ты урод, да я тебя прям ща в камеру упрячу до выяснения всех обстоятельств.\n" +
+			MassageAfterAction = $"Никитин: Ах ты урод, да я тебя прям ща в камеру упрячу до выяснения всех обстоятельств.\n" +
 				$"Либовски: Алексей, успокойтесь, я уверен, пара вопросов и все встанет на свои места. {Player.Instance.Name}, присядьте, пожалуйста.";
 			DoAfterAction = DoAfterActionLocal;
 		}

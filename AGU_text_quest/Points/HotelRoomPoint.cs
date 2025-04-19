@@ -30,7 +30,7 @@ namespace Points
         public FourthActionHotelRoomPoint()
         {
 			IsAvailable = false;
-			MassageAfterAction = $"{Player.Instance.Name} звлез в серверную, здесь пахло получше, можно перевести дыхание.\nЦой: Хватит придуриваться, вылась, надо стырить чип.\n{Player.Instance.Name} вылез из серверной.\n";
+			MassageAfterAction = $"{Player.Instance.Name} залез в серверную, здесь пахло получше, можно перевести дыхание.\nЦой: Хватит придуриваться, вылась, надо стырить чип.\n{Player.Instance.Name} вылез из серверной.\n";
         }
     }
 
@@ -58,7 +58,7 @@ namespace Points
         public SecondActionHotelRoomPoint()
         {
 			IsAvailable = false;
-			MassageAfterAction = $"На столе лежат просроченные тако. Вот откуда отвратительный смрад, помимо запоха говна.\n";
+			MassageAfterAction = $"На столе лежат просроченные тако. Вот откуда отвратительный смрад, помимо запаха говна.\n";
 			DoAfterAction = DoAfterActionLocal;
         }
 
@@ -80,7 +80,7 @@ namespace Points
         public FirstActionHotelRoomPoint()
         {
 			IsAvailable = false;
-			MassageAfterAction = $"{Player.Instance.Name} дернул ручку туалета, заперто. Из нутри донесся голос Ёренобу, переодически прирываемый пердежом: Смешер, это ты? Позови уборщиков, я тут все обосрал...\n";
+			MassageAfterAction = $"{Player.Instance.Name} дернул ручку туалета, заперто. Изнутри донесся голос Ёренобу, периодически прерываемый пердежом: Смешер, это ты? Позови уборщиков, я тут все обосрал...\n";
         }
     }
 }
