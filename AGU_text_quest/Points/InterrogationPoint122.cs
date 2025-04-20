@@ -55,7 +55,7 @@ namespace Points
         public ThirdActionInterrogationPoint122()
         {
             IsAvailable = false;
-            MassageAfterAction = $"'Какой снюс?' - спросил Суков. 'Жалко, что я добрый сегодня, иначе снес бы все ПЗРК' - подумал Юнис";
+            MassageAfterAction = $"'Какой снюс?' - спросил Суков. 'Жалко, что я добрый сегодня, иначе снес бы все ПЗРК' - подумал {Player.Instance.Name}";
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint118 : PointBase
     {
-        public override string Content => $"ГолдДрэ одним движением руки снимает ремень с себя и передает Юнису. ГолдДрэ отталкивает Блохину, а Юнис накидывает ремень на шею Белику. Через пару минут Белик синеет и пропадает, а на его месте появляется записка с буквами 'БА'. Парни и Блохина выходят на улицу. Прощаются. Юнис остается один на локации.";
+        public override string Content => $"ГолдДрэ одним движением руки снимает ремень с себя и передает {Player.Instance.Name}у. ГолдДрэ отталкивает Блохину, а {Player.Instance.Name} накидывает ремень на шею Белику. Через пару минут Белик синеет и пропадает, а на его месте появляется записка с буквами 'БА'. Парни и Блохина выходят на улицу. Прощаются. {Player.Instance.Name} остается один на локации.";
         public InterrogationPoint118()
         {
             Actions = new()
@@ -53,7 +53,7 @@ namespace Points
         public SecondActionInterrogationPoint118()
         {
             IsAvailable = false;
-            MassageAfterAction = $"Юнис пошел в шишку и выкурил самый крутой кальян в его жизни) Дальше вернулся на локацию.";
+            MassageAfterAction = $"{Player.Instance.Name} пошел в шишку и выкурил самый крутой кальян в его жизни) Дальше вернулся на локацию.";
         }
     }
 
@@ -63,7 +63,7 @@ namespace Points
         public ThirdActionInterrogationPoint118()
         {
             IsAvailable = false;
-            MassageAfterAction = $"Юнис погулял в Дубках и вернулся к локации убийства Белика";
+            MassageAfterAction = $"{Player.Instance.Name} погулял в Дубках и вернулся к локации убийства Белика";
         }
     }
 }
