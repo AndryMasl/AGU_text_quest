@@ -55,7 +55,7 @@ namespace Points
         public ThirdActionInterrogationPoint126()
         {
             IsAvailable = false;
-            MassageAfterAction = $"Юнис покричал и привлек внимание";
+            MassageAfterAction = $"{Player.Instance.Name} покричал и привлек внимание";
         }
     }
 }

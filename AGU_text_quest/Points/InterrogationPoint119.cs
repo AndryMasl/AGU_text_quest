@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint119 : PointBase
     {
-        public override string Content => $"{Player.Name} и GoldDre грустные выходят из падика, 'черт мы не убийцы чел' - СКАЗАЛ КАЧОК , Юнис вызвал полицию , чтобы спасти заложницу и попращался с Качком";
+        public override string Content => $"{Player.Name} и GoldDre грустные выходят из падика, 'черт мы не убийцы чел' - СКАЗАЛ КАЧОК , {Player.Instance.Name} вызвал полицию , чтобы спасти заложницу и попращался с Качком";
         public InterrogationPoint119()
         {
             Actions = new()
@@ -55,7 +55,7 @@ namespace Points
         public ThirdActionInterrogationPoint119()
         {
             IsAvailable = false;
-            MassageAfterAction = $"Юнис заскочил в Дикси, поздоровался с Чиржаевой и вернулся на локацию";
+            MassageAfterAction = $"{Player.Instance.Name} заскочил в Дикси, поздоровался с Чиржаевой и вернулся на локацию";
         }
     }
 }

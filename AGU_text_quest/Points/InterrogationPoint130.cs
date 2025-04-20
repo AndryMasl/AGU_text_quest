@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint130 : PointBase
     {
-        public override string Content => $"{Player.Name} подошел в рычагу. Взял свою руку. Взял пузырек с аптечкой. Юнис прислонил часть руки в месту разрыва, скрепил степлером и полил аптечкой. 'Больно конечно , но работает'- сказал Юнис. Юнис покрутил рычаг , дверь открылась. ";
+        public override string Content => $"{Player.Name} подошел в рычагу. Взял свою руку. Взял пузырек с аптечкой. {Player.Instance.Name} прислонил часть руки в месту разрыва, скрепил степлером и полил аптечкой. 'Больно конечно , но работает'- сказал {Player.Instance.Name}. {Player.Instance.Name} покрутил рычаг , дверь открылась. ";
         public InterrogationPoint130()
         {
             Actions = new()
@@ -55,7 +55,7 @@ namespace Points
         public ThirdActionInterrogationPoint130()
         {
             IsAvailable = false;
-            MassageAfterAction = $"Юнис постоял. Надо принимать решение.";
+            MassageAfterAction = $"{Player.Instance.Name} постоял. Надо принимать решение.";
         }
     }
 }

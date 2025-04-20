@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint120 : PointBase
     {
-        public override string Content => $"{Player.Name} Отталкивает ГолдДрэ, но люстра не падает и Белик обретает второе дыхание. ГолдДрэ встает и начинает кидать Юнису ПЗРК, Юнис ловит ПЗРК и стреляет. Появилась записка с буквами 'БА', парни выполнили задание и спускаются вниз. Юнис вызывает скорую помощь, чтобы похоронить покойников , парни прощаются";
+        public override string Content => $"{Player.Name} Отталкивает ГолдДрэ, но люстра не падает и Белик обретает второе дыхание. ГолдДрэ встает и начинает кидать {Player.Instance.Name}у ПЗРК, {Player.Instance.Name} ловит ПЗРК и стреляет. Появилась записка с буквами 'БА', парни выполнили задание и спускаются вниз. {Player.Instance.Name} вызывает скорую помощь, чтобы похоронить покойников , парни прощаются";
         public InterrogationPoint120()
         {
             Actions = new()
@@ -53,7 +53,7 @@ namespace Points
         public SecondActionInterrogationPoint120()
         {
             IsAvailable = false;
-            MassageAfterAction = $"Юнис пошел в шишку и выкурил самый крутой кальян в его жизни) Дальше вернулся на локацию.";
+            MassageAfterAction = $"{Player.Instance.Name} пошел в шишку и выкурил самый крутой кальян в его жизни) Дальше вернулся на локацию.";
         }
     }
 
@@ -63,7 +63,7 @@ namespace Points
         public ThirdActionInterrogationPoint120()
         {
             IsAvailable = false;
-            MassageAfterAction = $"Юнис погулял в Дубках и вернулся к локации убийства Белика";
+            MassageAfterAction = $"{Player.Instance.Name} погулял в Дубках и вернулся к локации убийства Белика";
         }
     }
 }

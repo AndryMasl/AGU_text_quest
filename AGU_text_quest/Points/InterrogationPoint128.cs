@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint128 : PointBase
     {
-        public override string Content => $"{Player.Name} берет рычаг и начинает крутить , дверь немного стала открываться. Как вдруг Бам, Путинцева отрезала серпом руку Юниса и рука осталась висеть на рычаге. Юнис убежал под парту";
+        public override string Content => $"{Player.Name} берет рычаг и начинает крутить , дверь немного стала открываться. Как вдруг Бам, Путинцева отрезала серпом руку {Player.Instance.Name}а и рука осталась висеть на рычаге. {Player.Instance.Name} убежал под парту";
         public InterrogationPoint128()
         {
             Actions = new()
@@ -45,7 +45,7 @@ namespace Points
         public SecondActionInterrogationPoint128()
         {
             IsAvailable = false;
-            MassageAfterAction = $"'Зачем мне новый Гелик?' - это не лучшая покупка сейчас, подумал Юнис";
+            MassageAfterAction = $"'Зачем мне новый Гелик?' - это не лучшая покупка сейчас, подумал {Player.Instance.Name}";
         }
     }
 

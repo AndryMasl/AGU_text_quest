@@ -34,7 +34,7 @@ namespace Points
         public FirstActionInterrogationPoint100()
         {
             IsAvailable = false;
-            MassageAfterAction = $"{Player.Instance.Name} пошел быстро на улицу. Достал свой Iphone 16 PRO MAX на 256 gb и зашел в приложение яндекс карты. По близости оказался только ДИКСИ. Юнис расстроенный вернулся домой\n";
+            MassageAfterAction = $"{Player.Instance.Name} пошел быстро на улицу. Достал свой Iphone 16 PRO MAX на 256 gb и зашел в приложение яндекс карты. По близости оказался только ДИКСИ. {Player.Instance.Name} расстроенный вернулся домой\n";
             DoAfterAction = DoAfterActionLocal;
         }
         private void DoAfterActionLocal(Player player)

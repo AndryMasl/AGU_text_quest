@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint110 : PointBase
     {
-        public override string Content => $"{Player.Name} открывает коробку и там лежат крутые очки РэйБен, прям как на садоводе. У Юниса пошла слеза от былых времен перепродаж и богаств.";
+        public override string Content => $"{Player.Name} открывает коробку и там лежат крутые очки РэйБен, прям как на садоводе. У {Player.Instance.Name}а пошла слеза от былых времен перепродаж и богаств.";
         public InterrogationPoint110()
         {
             Actions = new()
@@ -55,7 +55,7 @@ namespace Points
         public ThirdActionInterrogationPoint110()
         {
             IsAvailable = false;
-            MassageAfterAction = $"{Player.Instance.Name} достал телефон , чтобы отфокать очки и выложить на авито ,но на заставке телефона у Юниса стоял Аборт с фразой 'Why not abort' и Юнис опомнился... \n";
+            MassageAfterAction = $"{Player.Instance.Name} достал телефон , чтобы отфокать очки и выложить на авито ,но на заставке телефона у {Player.Instance.Name}а стоял Аборт с фразой 'Why not abort' и {Player.Instance.Name} опомнился... \n";
         }
     }
 }
