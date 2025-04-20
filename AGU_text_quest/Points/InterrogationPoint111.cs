@@ -9,7 +9,7 @@ namespace Points
 {
     internal class InterrogationPoint111 : PointBase
     {
-        public override string Content => $"{Player.Name} надевает очки. ПОявляется проекция с адресом дома : Ул. Гроу стрит дом Крутой";
+        public override string Content => $"{Player.Name} надевает очки. Появляется проекция с адресом дома : Ул. Гроу стрит дом Крутой";
         public InterrogationPoint111()
         {
             Actions = new()
