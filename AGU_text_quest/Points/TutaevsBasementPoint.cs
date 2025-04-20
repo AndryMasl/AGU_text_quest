@@ -9,7 +9,7 @@ namespace Points
 {
 	internal class TutaevsBasementPoint : PointBase
 	{
-		public override string Content => $"{Player.Instance.Name} спускается в подвал, перед ни как и раньше стоит стол Tутаева, вот ток сам Тутаев врос в стену.\n{Player.Instance.Name}: Андрей Владимировиччччч?\nТутаев: Часть команды - часть корабля.\n{Player.Instance.Name}: Ясно, понятно.\n{Player.Instance.Name} осматривается. Дальнейший путь преграждает дверь бункера Тутаева, такую фиг вскроешь и как на зло, дверь заперта. Нужно что-то придумать.";
+		public override string Content => $"{Player.Instance.Name} спускается в подвал, перед ним как и раньше стоит стол Tутаева, вот ток сам Тутаев врос в стену.\n{Player.Instance.Name}: Андрей Владимировиччччч?\nТутаев: Часть команды - часть корабля.\n{Player.Instance.Name}: Ясно, понятно.\n{Player.Instance.Name} осматривается. Дальнейший путь преграждает дверь бункера Тутаева, такую фиг вскроешь и как на зло, дверь заперта. Нужно что-то придумать.";
 
         public TutaevsBasementPoint()
         {

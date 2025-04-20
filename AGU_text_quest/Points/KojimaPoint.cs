@@ -21,8 +21,16 @@ namespace Points
 				new FourthActionKojimaPoint(),
 				new FifthActionKojimaPoint(),
 			};
+
+			//DoBeforeAction = DoBeforeActionLocal;
 		}
-    }
+
+		//private void DoBeforeActionLocal()
+		//{
+		//	Console.OutputEncoding = Encoding.Unicode;
+		//	Console.InputEncoding = Encoding.Unicode;
+		//}
+	}
 
 	internal class FifthActionKojimaPoint : FifthAction
 	{
